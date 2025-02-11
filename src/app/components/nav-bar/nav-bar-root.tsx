@@ -5,7 +5,6 @@ import { IconType } from "react-icons";
 import { BsStack } from "react-icons/bs";
 import { FaCompass, FaUser } from "react-icons/fa";
 import { HiPencil } from "react-icons/hi";
-import { IoShareSocial } from "react-icons/io5";
 import { NavBar } from ".";
 
 const navData: Array<{

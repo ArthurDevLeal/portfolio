@@ -21,7 +21,12 @@ export default function ProjectPage() {
 
         <FadeInContainer delay={0.4}>
           <div className="w-full">
-            <img src={Project.src} className="w-full h-[400px] object-cover rounded-lg" loading="lazy" />
+            <img
+              src={Project.src}
+              alt={"Foto do projeto"}
+              className="w-full h-[400px] object-cover rounded-lg"
+              loading="lazy"
+            />
           </div>
         </FadeInContainer>
         <FadeInContainer delay={0.5}>

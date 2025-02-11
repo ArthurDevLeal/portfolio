@@ -5,10 +5,9 @@ interface ItemProps {
   Icon: IconType;
   title: string;
   description: string;
-  tags?: Array<string>;
   delay:number
 }
-export default function StackItem({ Icon, title, description, tags,delay }: ItemProps) {
+export default function StackItem({ Icon, title, description,delay }: ItemProps) {
   return (
     <FadeInContainer delay={delay}>
       <div className="flex flex-col justify-center p-6 bg-background border rounded-lg w-full flex-1 h-[100px]">

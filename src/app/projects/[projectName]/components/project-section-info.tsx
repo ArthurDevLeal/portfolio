@@ -1,6 +1,6 @@
 interface SectionInfoProps {
   title: string;
-  texts: Array<String>;
+  texts: Array<string>;
   position:number
 }
 export default function SectionInfo({ title, texts,position }: SectionInfoProps) {

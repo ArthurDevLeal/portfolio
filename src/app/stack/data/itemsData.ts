@@ -1,6 +1,6 @@
 import { IconType } from "react-icons";
 import { DiVisualstudio } from "react-icons/di";
-import { FaFigma, FaGit, FaGitAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
+import { FaFigma, FaGitAlt, FaGithub, FaNodeJs, FaReact } from "react-icons/fa";
 import {
   SiCanva,
   SiCss3,
