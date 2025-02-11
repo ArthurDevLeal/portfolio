@@ -1,0 +1,42 @@
+{
+  "projects": {
+    "coroata-conecta": {
+      "title": "Coroatá Conecta",
+      "description": "Um conceito de design moderno, responsivo e intuitivo, desenvolvido para oferecer uma experiência acessível e fluida aos usuários. Criado especialmente para a cidade de Coroatá, o projeto tem como objetivo facilitar a compra, venda e aluguel de produtos e serviços, conectando moradores e comerciantes em uma plataforma dinâmica e eficiente.",
+      "date": "09/01/2025",
+      "src": "../CoroataMock.png",
+      "links": {
+        "figmaLink": "https://www.figma.com/design/x4eeQKKFtnFSQkVcX8U5Ns/Coroata-Conecta?node-id=1-85&t=jFTvvmlNFS6f3cL1-1"
+      },
+      "context": "Projeto de design focado na experiência do usuário e acessibilidade.",
+      "challenges": [
+        "Criar um layout visualmente atraente e funcional",
+        "Garantir a responsividade para dispositivos móveis"
+      ],
+      "solution": {
+        "features": ["Componentes de UI modernos", "Design responsivo"],
+        "stack": ["Figma", "Design System personalizado"]
+      },
+      "result": "Uma identidade visual sofisticada e intuitiva, projetada para proporcionar uma experiência envolvente e harmoniosa, servindo como base sólida para futuras implementações e expansões."
+    },
+    "studyhub": {
+      "title": "StudyHub",
+      "description": "Um design de aplicativo inovador, desenvolvido para aprimorar a experiência de aprendizado, auxiliando os usuários na criação de rotinas eficientes e em uma abordagem mais produtiva para os estudos.",
+      "date": "11/02/2025",
+      "src": "../StudyHubMock.png",
+      "links": {
+        "figmaLink": "https://www.figma.com/design/pZ0eHOzoH72lP1BejwBKMl/StudyHub?node-id=3-2&t=wi4jiqurhGDJ2chH-1"
+      },
+      "context": "Projeto de design para um aplicativo educacional com foco em organização e usabilidade.",
+      "challenges": [
+        "Criar uma interface intuitiva para facilitar o estudo",
+        "Equilibrar um design minimalista com funcionalidades completas"
+      ],
+      "solution": {
+        "features": ["Interface limpa e organizada", "Navegação fluida e acessível"],
+        "stack": ["Figma", "Design System moderno"]
+      },
+      "result": "Uma interface limpa e estratégica, focada em otimizar a produtividade dos usuários, oferecendo uma experiência de aprendizado fluida e eficiente, com grande potencial para expansões e integrações futuras."
+    }
+  }
+}

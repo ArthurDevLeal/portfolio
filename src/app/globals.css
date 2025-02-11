@@ -16,7 +16,7 @@
   }
 
   .dark {
-    --background: 0 0% 5%;
+    --background: 0 0% 7%;
     --card: 0 0% 9%;
     --primary: 265 84% 58%;
     --accent: 0 0% 15%;
@@ -31,6 +31,7 @@
 @layer base {
   * {
     @apply border-border;
+    @apply custom-scrollbar
   }
 
   body {

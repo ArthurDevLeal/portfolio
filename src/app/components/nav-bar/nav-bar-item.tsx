@@ -10,6 +10,10 @@ interface NavBarItemProps {
 export default function NavBarItem({ path, Icon, name }: NavBarItemProps) {
   const pathName = usePathname();
   const router = useRouter();
+  const isActive = () => {
+    if (path === "/") return pathName === "/";
+    return path ? pathName.startsWith(path) : false;
+  };
   const handleClick = () => {
     router.push(path);
   };
@@ -17,11 +21,11 @@ export default function NavBarItem({ path, Icon, name }: NavBarItemProps) {
     <button
       onClick={handleClick}
       className={`flex-col h-full p-3 rounded-md flex items-center justify-center  transition-colors ${
-        pathName === path ? "bg-background" : ""
+        isActive() ? "bg-background" : ""
       }`}
     >
-      <Icon size={18} className={`${pathName === path ? "opacity-100" : "opacity-40 "}`} />
-      <p className={`text-sm  ${pathName === path ? "opacity-100" : "opacity-40 "}`}>{name}</p>
+      <Icon size={18} className={`${isActive() ? "opacity-100" : "opacity-40 "}`} />
+      <p className={`text-sm hidden xs:block  ${isActive() ? "opacity-100" : "opacity-40 "}`}>{name}</p>
     </button>
   );
 }

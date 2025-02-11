@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { radioCanada, spaceGrotesk } from "./components/fonts";
 import { NavBar } from "./components/nav-bar";
-import SideBarRoot from "./components/side-bar/side-bar-root";
+import { SideBar } from "./components/side-bar";
 import { ThemeProvider } from "./components/theme-provider";
 import "./globals.css";
 
@@ -16,13 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body
-        className={`${spaceGrotesk.className} ${radioCanada.variable} antialiased bg-background text-foreground flex`}
+        className={`${spaceGrotesk.className} ${radioCanada.variable} antialiased bg-background text-foreground flex `}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <SideBarRoot />
-          {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SideBar.Root />
+          <div className="h-full w-[250px] hidden md:block"></div>
+          <div className="flex-1 flex flex-col">{children}</div>
           <NavBar.Root />
         </ThemeProvider>
       </body>
