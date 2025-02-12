@@ -49,11 +49,11 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="pt-BR">
       <head>
         <meta name="robots" content="index, follow" />
-        <link rel="icon" type="image/png" href="/Logo.png/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/Logo.png/favicon.svg" />
-        <link rel="shortcut icon" href="/Logo.png/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/Logo.png/apple-touch-icon.png" />
-        <link rel="manifest" href="/Logo.png/site.webmanifest" />
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
         className={`${spaceGrotesk.className} ${radioCanada.variable} antialiased bg-background text-foreground flex `}
