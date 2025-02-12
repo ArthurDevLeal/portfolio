@@ -10,8 +10,8 @@ export default function Title() {
           Um <span className="opacity-60">desenvolvedor</span> Front end.
         </h1>
         <p className="opacity-60 mt-6">
-          Sou um desenvolvedor que gosta de criar aplicações web e explorar novas tecnologias — <br />
-          basicamente, passo a maior parte do meu tempo na frente de uma tela.
+          Sou um desenvolvedor apaixonado por criar aplicações web e explorar novas tecnologias, sempre
+          buscando inovação e eficiência.
         </p>
       </FadeInContainer>
     </>

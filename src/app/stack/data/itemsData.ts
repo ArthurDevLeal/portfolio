@@ -13,7 +13,6 @@ import {
   SiNestjs,
   SiNextdotjs,
   SiPostman,
-  SiPrisma,
   SiTailwindcss,
   SiTauri,
   SiTypescript,
@@ -79,16 +78,6 @@ export const backEndData: TechItem[] = [
     title: "Express",
     Icon: SiExpress,
     description: "Framework web rápido e minimalista para Node.js",
-  },
-  {
-    title: "Prisma",
-    Icon: SiPrisma,
-    description: "ORM moderno para Node.js e TypeScript com foco em type safety",
-  },
-  {
-    title: "NestJS",
-    Icon: SiNestjs,
-    description: "Framework Node.js progressivo para construir aplicações escaláveis",
   },
 ];
 

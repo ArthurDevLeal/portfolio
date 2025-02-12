@@ -16,7 +16,7 @@ export default function Page() {
 
         <section className="flex flex-col gap-2 mt-6">
           <FadeInContainer delay={0.5}>
-            <p className="text-lg font-semibold">Lancamentos</p>
+            <p className="text-lg font-semibold">lançamentos</p>
           </FadeInContainer>
           <MainPage.NewDrops.Root>
             <MainPage.NewDrops.Item
