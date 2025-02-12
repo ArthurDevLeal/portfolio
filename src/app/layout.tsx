@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Arthur Leal | Portfolio",
     images: [
       {
-        url: "https://www.arthurdevleal.tech/Logo.png",
+        url: "https://cdn.discordapp.com/attachments/1285307087718711338/1339040855280980119/logo.png?ex=67ad467a&is=67abf4fa&hm=3d11d56a34ebf3bb985b4bd508bc6fb44567fbe4576874e9f9f3287da21e654a&",
         width: 500,
         height: 500,
         alt: "Arthur Leal - Logo",
