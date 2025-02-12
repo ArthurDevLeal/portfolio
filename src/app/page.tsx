@@ -6,7 +6,7 @@ import SeeMoreRoot from "./components/see-more/see-more-root";
 
 export default function Page() {
   return (
-    <div className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
+    <main className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
       <div className="flex flex-col">
         <MainPage.Title />
 
@@ -14,7 +14,7 @@ export default function Page() {
           <MainPage.TitleButtons />
         </FadeInContainer>
 
-        <div className="flex flex-col gap-2 mt-6">
+        <section className="flex flex-col gap-2 mt-6">
           <FadeInContainer delay={0.5}>
             <p className="text-lg font-semibold">Lancamentos</p>
           </FadeInContainer>
@@ -43,8 +43,8 @@ export default function Page() {
             Icon={HiPencil}
             buttonText="Ver projetos"
           />
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

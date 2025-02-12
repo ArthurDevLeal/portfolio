@@ -4,7 +4,7 @@ import AboutMeItem from "./components/about-me-item";
 
 export default function About() {
   return (
-    <div className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
+    <main className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
       <div className="flex flex-col">
         <div className="flex flex-col md:flex-row items-center gap-4">
           <div className="max-w-[600px]">
@@ -20,7 +20,7 @@ export default function About() {
           </FadeInContainer>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
           <AboutMeItem
             delay={0.6}
             title="Skills"
@@ -36,8 +36,8 @@ export default function About() {
             title="Idiomas"
             description="Sou fluente em português e tenho um nível intermediário em inglês, o que me permite me comunicar e aprender em um ambiente global, mesmo que ainda esteja aprimorando minha fluência na língua."
           />
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

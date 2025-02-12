@@ -7,7 +7,7 @@ import { backEndData, designData, frontEndData, mobileData } from "./data/itemsD
 
 export default function StackPage() {
   return (
-    <div className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
+    <main className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
       <div className="flex flex-col gap-6">
         <Title title="Stack" description="Lista das minhas tecnologias do dia a dia" />
 
@@ -24,6 +24,6 @@ export default function StackPage() {
           buttonText="Ver about me"
         />
       </div>
-    </div>
+    </main>
   );
 }

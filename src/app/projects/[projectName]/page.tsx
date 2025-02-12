@@ -10,7 +10,7 @@ export default function ProjectPage() {
     projectTexts.projects[projectName as keyof typeof projectTexts.projects];
 
   return (
-    <div className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
+    <main className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
       <div className="flex flex-col grow">
         <FadeInContainer>
           <ProjectIndex.Title mainText={Project.title} description={Project.description} />
@@ -58,6 +58,6 @@ export default function ProjectPage() {
           </p>
         </FadeInContainer>
       </div>
-    </div>
+    </main>
   );
 }

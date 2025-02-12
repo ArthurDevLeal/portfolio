@@ -6,11 +6,11 @@ import ProjectItem from "./components/project-item";
 
 export default function Projects() {
   return (
-    <div className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
+    <main className="w-full flex justify-center pb-[120px] py-[40px] mx-auto md:my-[50px] px-8 md:pb-0 md:max-w-4xl">
       <div className="flex flex-col">
         <Title title="Projetos" description="Lista dos meus melhores projetos" />
 
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-12 items-center mt-6">
+        <section className="grid md:grid-cols-2 grid-cols-1 gap-12 items-center mt-6">
           <ProjectItem
             delay={0.4}
             name="Coroatá Conecta"
@@ -28,7 +28,7 @@ export default function Projects() {
             href="/projects/studyhub"
             stack={["Figma", "Responsive"]}
           />
-        </div>
+        </section>
 
         <SeeMoreRoot
           name="Stack"
@@ -38,6 +38,6 @@ export default function Projects() {
           buttonText="Ver Stack"
         />
       </div>
-    </div>
+    </main>
   );
 }
