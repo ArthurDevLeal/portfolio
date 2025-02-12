@@ -42,7 +42,9 @@ export const metadata: Metadata = {
     title: "Arthur Leal | Desenvolvedor Front-end",
     description:
       "Desenvolvedor Front-end especializado em React, Next.js e Tailwind CSS. Interfaces modernas e performáticas com experiência também em Node.js e Prisma.",
-    images: ["https://www.arthurdevleal.tech/Logo.png"],
+    images: [
+      "https://cdn.discordapp.com/attachments/1285307087718711338/1339040855280980119/logo.png?ex=67ad467a&is=67abf4fa&hm=3d11d56a34ebf3bb985b4bd508bc6fb44567fbe4576874e9f9f3287da21e654a&",
+    ],
   },
   metadataBase: new URL("https://www.arthurdevleal.tech/"),
   alternates: {
