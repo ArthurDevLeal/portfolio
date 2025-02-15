@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Meu Portfólio – Arthur Leal  
 
-## Getting Started
+Bem-vindo ao repositório do meu **portfólio pessoal**! 🎨💻  
 
-First, run the development server:
+Este projeto foi desenvolvido para apresentar minha trajetória como **desenvolvedor front-end e freelancer**, destacando minhas **habilidades, projetos e tecnologias** com um design moderno e interativo.  
 
+🔗 **Acesse o site:** [arthurdevleal.tech](https://arthurdevleal.tech/)  
+
+---
+
+## 🛠️ Tecnologias Utilizadas  
+
+- **Next.js** – Framework React para performance e SEO otimizados.  
+- **React.js** – Biblioteca para construção de interfaces dinâmicas.  
+- **Tailwind CSS** – Estilização moderna e responsiva com utilitários.  
+- **Framer Motion** – Animações suaves para uma experiência fluida.  
+
+---
+
+## ✨ Funcionalidades  
+
+✅ **Sobre mim** – Breve apresentação e experiência.  
+✅ **Projetos** – Exibição dos principais trabalhos que desenvolvi.  
+✅ **Stack** – Tecnologias que domino e utilizo nos meus projetos.  
+✅ **Contato** – Links para minhas redes sociais e formas de contato.  
+✅ **Animações** – Efeitos de hover nos cards e transições suaves nas páginas.  
+
+---
+
+## 🛠️ Como Rodar o Projeto Localmente  
+
+Se quiser testar ou modificar o projeto, siga estes passos:  
+
+### 1️⃣ Clone o repositório  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Instale as dependências  
+```bash
+cd nome-do-repositorio
+npm install
+# ou
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3️⃣ Rode o projeto  
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O site estará disponível em **http://localhost:3000** 🚀  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contato  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Se quiser trocar uma ideia sobre desenvolvimento, entre em contato comigo:  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📩 **Email:** [arthurdevleal@gmail.com](mailto:arthurdevleal@gmail.com)  
+🔗 **LinkedIn:** [linkedin.com/in/arthur-leal-9a8ab1315](https://linkedin.com/in/arthur-leal-9a8ab1315)  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Gostou do projeto? Deixe uma ⭐ e contribua! 😃  
