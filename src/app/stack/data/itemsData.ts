@@ -10,7 +10,6 @@ import {
   SiHtml5,
   SiInsomnia,
   SiJavascript,
-  SiNestjs,
   SiNextdotjs,
   SiPostman,
   SiTailwindcss,
