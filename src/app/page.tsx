@@ -20,19 +20,19 @@ export default function Page() {
           </FadeInContainer>
           <MainPage.NewDrops.Root>
             <MainPage.NewDrops.Item
+              delay={0.4}
+              name="Lumina"
+              description="Lumina é uma plataforma inteligente de gestão financeira pessoal, desenvolvida para simplificar o controle de receitas, despesas e metas financeiras."
+              src="./lumina.png"
+              href="/projects/lumina"
+            />
+
+            <MainPage.NewDrops.Item
               delay={0.7}
               name="Coroatá Conecta"
               description="Coroatá Conecta é um projeto de design criado para proporcionar uma experiência moderna e acessível aos usuários."
               src="./CoroataMock.png"
               href="/projects/coroata-conecta"
-            />
-
-            <MainPage.NewDrops.Item
-              delay={0.8}
-              name="Study Hub"
-              description="Study Hub é um design de aplicativo moderno e intuitivo, criado para transformar a experiência de aprendizado. "
-              src="./StudyHubMock.png"
-              href="/projects/studyhub"
             />
           </MainPage.NewDrops.Root>
 

@@ -37,6 +37,44 @@
         "stack": ["Figma", "Design System moderno"]
       },
       "result": "Uma interface limpa e estratégica, focada em otimizar a produtividade dos usuários, oferecendo uma experiência de aprendizado fluida e eficiente, com grande potencial para expansões e integrações futuras."
+    },
+    "lumina": {
+      "title": "Lumina",
+      "description": "Uma plataforma inteligente de gestão financeira pessoal, desenvolvida para simplificar o controle de receitas, despesas e metas financeiras. Criada com foco em usabilidade e análise de dados, a Lumina auxilia usuários a tomar decisões financeiras mais informadas através de relatórios detalhados, categorização automática de transações e acompanhamento de objetivos financeiros em tempo real.",
+      "date": "02/01/2026",
+      "src": "../lumina.png",
+      "links": {
+        "demo": "https://lumina.arthurdevleal.tech",
+        "repo": "https://github.com/ArthurDevLeal/study-planner-front-end"
+      },
+      "context": "Projeto full-stack focado em gestão financeira inteligente e experiência do usuário intuitiva.",
+      "challenges": [
+        "Criar uma interface intuitiva para gerenciamento financeiro complexo",
+        "Implementar sistema de categorização automática de transações",
+        "Garantir segurança e privacidade dos dados financeiros",
+        "Desenvolver relatórios e gráficos em tempo real"
+      ],
+      "solution": {
+        "features": [
+          "Dashboard interativo com gráficos",
+          "Categorização automática",
+          "Relatórios financeiros detalhados",
+          "Metas e progresso em tempo real",
+          "Autenticação segura",
+          "Histórico de transações completo"
+        ],
+        "stack": [
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "PostgreSQL",
+          "Figma",
+          "Express.js",
+          "Node.js"
+        ]
+      },
+      "result": "Uma plataforma robusta e elegante que oferece controle financeiro abrangente, combinando análise inteligente de dados com uma interface moderna e responsiva, facilitando a tomada de decisões financeiras conscientes e proporcionando uma experiência fluida em qualquer dispositivo."
     }
   }
 }
