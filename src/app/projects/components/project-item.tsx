@@ -15,7 +15,7 @@ interface ProjectItemProps {
 
 export default function ProjectItem({ description, href, name, src, stack, delay }: ProjectItemProps) {
   return (
-    <FadeInContainer delay={delay}>
+    <FadeInContainer delay={delay} classname="h-full">
       <Link href={href}>
         <Card className="group hover:shadow-lg  ">
           <div className="flex flex-col ">
