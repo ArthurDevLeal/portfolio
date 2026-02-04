@@ -10,7 +10,7 @@ export default function About() {
           <div className="max-w-[600px]">
             <Title
               title="Sobre mim"
-              description="Com mais de 1 ano de experiência em front-end, focado em JavaScript, React e suas bibliotecas, trabalhei em projetos variados, sempre priorizando a experiência do usuário e o desempenho. Recentemente, comecei a explorar o desenvolvimento backend, com experiência em Node.js e bancos de dados, expandindo meus conhecimentos em full-stack."
+              description="Com mais de 2 anos de experiência em front-end, focado em JavaScript, React e suas bibliotecas, trabalhei em projetos variados, sempre priorizando a experiência do usuário e o desempenho. Recentemente, comecei a explorar o desenvolvimento backend, com experiência em Node.js e bancos de dados, expandindo meus conhecimentos em full-stack."
             />
           </div>
           <FadeInContainer delay={0.3}>
