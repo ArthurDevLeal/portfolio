@@ -13,12 +13,21 @@ export default function Projects() {
         <section className="grid md:grid-cols-2 grid-cols-1 gap-12 items-center mt-6">
           <ProjectItem
             delay={0.4}
+            name="Brasa Menu App"
+            description="Sistema completo de gestão de cardápio virtual para restaurantes, permitindo que administradores gerenciem produtos, categorias, promoções e configurações do estabelecimento."
+            src="./brasa.png"
+            href="/projects/brasa-menu-app"
+            stack={["NextJS", "React", "TypeScript", "TailwindCSS", "PostgreSQL", "Prisma", "Express.js"]}
+          />
+          <ProjectItem
+            delay={0.4}
             name="Lumina"
             description="Lumina é uma plataforma inteligente de gestão financeira pessoal, desenvolvida para simplificar o controle de receitas, despesas e metas financeiras."
             src="./lumina.png"
             href="/projects/lumina"
             stack={["NextJS", "React", "TypeScript", "TailwindCSS", "Prisma", "Express.js"]}
           />
+
           <ProjectItem
             delay={0.4}
             name="Coroatá Conecta"

@@ -75,6 +75,48 @@
         ]
       },
       "result": "Uma plataforma robusta e elegante que oferece controle financeiro abrangente, combinando análise inteligente de dados com uma interface moderna e responsiva, facilitando a tomada de decisões financeiras conscientes e proporcionando uma experiência fluida em qualquer dispositivo."
+    },
+    "brasa-menu-app": {
+      "title": "Brasa Menu App",
+      "description": "Sistema completo de gestão de cardápio virtual para restaurantes, permitindo que administradores gerenciem produtos, categorias, promoções e configurações do estabelecimento. Com foco em performance e escalabilidade, a plataforma oferece uma experiência intuitiva tanto para gerentes quanto para clientes, facilitando o acesso ao cardápio digital e visualização de métricas em tempo real.",
+      "date": "17/02/2026",
+      "src": "../brasa.png",
+      "links": {
+        "demo": "https://brasa-menu.vlsolutions.site/",
+        "repo": "https://github.com/ArthurDevLeal/brasa-menu-front-end"
+      },
+      "context": "Sistema completo de cardápio virtual para restaurantes, desenvolvido com foco em performance, escalabilidade e experiência do usuário. Integra painel administrativo robusto com interface pública acessível.",
+      "challenges": [
+        "Criar um painel administrativo completo e intuitivo para gerenciamento de cardápio",
+        "Garantir performance e responsividade em diferentes dispositivos",
+        "Implementar sistema de categorização e filtros eficientes",
+        "Sincronizar dados em tempo real entre frontend e backend",
+        "Otimizar a experiência do usuário final ao visualizar o cardápio"
+      ],
+      "solution": {
+        "features": [
+          "Dashboard administrativo com gestão completa de produtos e categorias",
+          "Sistema de promoções e itens em destaque",
+          "Interface responsiva para visualização do cardápio",
+          "Filtros avançados e busca otimizada",
+          "Autenticação segura para administradores",
+          "Painel de estatísticas e métricas de visualização",
+          "Atualização de conteúdo em tempo real",
+          "Interface mobile-first"
+        ],
+        "stack": [
+          "Next.js",
+          "TypeScript",
+          "React",
+          "Tailwind CSS",
+          "PostgreSQL",
+          "Prisma ORM",
+          "Node.js",
+          "Express.js",
+          "Figma"
+        ]
+      },
+      "result": "Uma plataforma robusta e escalável que revoluciona a forma como restaurantes gerenciam e apresentam seus cardápios digitalmente, combinando um painel administrativo poderoso com uma interface pública elegante e responsiva, proporcionando uma experiência invejável tanto para proprietários quanto para clientes."
     }
   }
 }

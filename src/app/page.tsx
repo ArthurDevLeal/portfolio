@@ -21,18 +21,17 @@ export default function Page() {
           <MainPage.NewDrops.Root>
             <MainPage.NewDrops.Item
               delay={0.4}
+              name="Brasa Menu App"
+              description="Sistema completo de gestão de cardápio virtual para restaurantes, permitindo que administradores gerenciem produtos, categorias, promoções e configurações do estabelecimento."
+              src="./brasa.png"
+              href="/projects/brasa-menu-app"
+            />
+            <MainPage.NewDrops.Item
+              delay={0.4}
               name="Lumina"
               description="Lumina é uma plataforma inteligente de gestão financeira pessoal, desenvolvida para simplificar o controle de receitas, despesas e metas financeiras."
               src="./lumina.png"
               href="/projects/lumina"
-            />
-
-            <MainPage.NewDrops.Item
-              delay={0.7}
-              name="Coroatá Conecta"
-              description="Coroatá Conecta é um projeto de design criado para proporcionar uma experiência moderna e acessível aos usuários."
-              src="./CoroataMock.png"
-              href="/projects/coroata-conecta"
             />
           </MainPage.NewDrops.Root>
 
