@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils"
 import { RiGlassesFill, RiGlassesLine } from "@remixicon/react"
 import { motion } from "framer-motion"
 import { ReactNode, useEffect, useRef, useState } from "react"
+import StaggerChars from "./ui/stagger-chars"
 
 export interface NavItem {
   label: string
@@ -35,14 +36,14 @@ const ExpandableNavbar = ({
   const [stage, setStage] = useState<AnimationStage>("fullyExpanded")
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
-  const [fullWidth, setFullWidth] = useState(52) 
+  const [fullWidth, setFullWidth] = useState(52)
 
   useEffect(() => {
     if (contentRef.current) {
       const measuredWidth = contentRef.current.offsetWidth + 52
       setFullWidth(measuredWidth)
     }
-  }, [items, logo, cta]) 
+  }, [items, logo, cta])
 
   const handleExpand = () => {
     setStage("movingToCenter")
@@ -62,7 +63,11 @@ const ExpandableNavbar = ({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node) && isExpanded) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node) &&
+        isExpanded
+      ) {
         handleCollapse()
       }
     }
@@ -71,16 +76,18 @@ const ExpandableNavbar = ({
   }, [isExpanded])
 
   return (
-    <div className="fixed bottom-8 left-0 right-0 z-50 flex justify-center pointer-events-none">
-      <div 
-        ref={contentRef} 
-        className="invisible absolute flex items-center gap-1 pr-2 pointer-events-none whitespace-nowrap"
+    <div className="pointer-events-none fixed right-0 bottom-8 left-0 z-50 flex justify-center">
+      <div
+        ref={contentRef}
+        className="pointer-events-none invisible absolute flex items-center gap-1 pr-2 whitespace-nowrap"
         aria-hidden="true"
       >
         {logo && <div className="mr-1 shrink-0 border-r pr-3 pl-2">{logo}</div>}
         <nav className="flex items-center gap-0.5">
           {items.map((item, i) => (
-            <span key={i} className="px-3.5 py-2 text-sm font-medium">{item.label}</span>
+            <span key={i} className="px-3.5 py-2 text-sm font-medium">
+              {item.label}
+            </span>
           ))}
         </nav>
         {cta && <div className="ml-auto shrink-0 pl-2">{cta}</div>}
@@ -90,19 +97,24 @@ const ExpandableNavbar = ({
         ref={containerRef}
         initial={false}
         animate={{
-          x: stage === "collapsed" || stage === "movingToLeft" 
-            ? "calc(50vw - 26px - 2rem)" 
-            : 0,
+          x:
+            stage === "collapsed" || stage === "movingToLeft"
+              ? "calc(50vw - 26px - 2rem)"
+              : 0,
 
           width:
             stage === "widthExpanding" ||
             stage === "fullyExpanded" ||
             stage === "contentFadingOut"
-              ? fullWidth 
+              ? fullWidth
               : "52px",
 
           borderRadius:
-            stage === "fullyExpanded" || stage === "widthExpanding" || stage === "contentFadingOut" ? 18 : 999,
+            stage === "fullyExpanded" ||
+            stage === "widthExpanding" ||
+            stage === "contentFadingOut"
+              ? 18
+              : 999,
         }}
         transition={{
           x: { duration: 0.35, ease: [0.4, 0, 0.2, 1] },
@@ -118,26 +130,32 @@ const ExpandableNavbar = ({
           onClick={() => (isCollapsed ? handleExpand() : handleCollapse())}
           className="relative flex h-13 w-13 shrink-0 cursor-pointer items-center justify-center text-foreground transition-colors hover:bg-muted"
         >
-           <motion.span
-              animate={{
-                rotate: isCollapsed ? 360 : 0,
-                opacity: isCollapsed ? 0 : 1,
-              }}
-              transition={{ duration: 0.3, opacity: { duration: isCollapsed ? 0.28 : 0 } }}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <RiGlassesFill size={26} className="text-foreground" />
-            </motion.span>
-            <motion.span
-              animate={{
-                rotate: isCollapsed ? 360 : 0,
-                opacity: isCollapsed ? 1 : 0,
-              }}
-              transition={{ duration: 0.3, opacity: { duration: isCollapsed ? 0.28 : 0 } }}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <RiGlassesLine size={26} className="text-foreground" />
-            </motion.span>
+          <motion.span
+            animate={{
+              rotate: isCollapsed ? 360 : 0,
+              opacity: isCollapsed ? 0 : 1,
+            }}
+            transition={{
+              duration: 0.3,
+              opacity: { duration: isCollapsed ? 0.28 : 0 },
+            }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            <RiGlassesFill size={26} className="text-foreground" />
+          </motion.span>
+          <motion.span
+            animate={{
+              rotate: isCollapsed ? 360 : 0,
+              opacity: isCollapsed ? 1 : 0,
+            }}
+            transition={{
+              duration: 0.3,
+              opacity: { duration: isCollapsed ? 0.28 : 0 },
+            }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            <RiGlassesLine size={26} className="text-foreground" />
+          </motion.span>
         </button>
 
         <motion.div
@@ -152,15 +170,20 @@ const ExpandableNavbar = ({
           transition={{ duration: 0.25 }}
           className="flex flex-1 items-center gap-1 overflow-hidden pr-2"
         >
-          {logo && <div className="mr-1 shrink-0 border-r pr-3 pl-2">{logo}</div>}
+          {logo && (
+            <div className="mr-1 shrink-0 border-r pr-3 pl-2">{logo}</div>
+          )}
           <nav className="flex flex-1 items-center gap-0.5">
             {items.map((item, i) => (
               <button
                 key={i}
                 onClick={item.onClick}
-                className="cursor-pointer rounded-xl px-3.5 py-2 text-sm font-medium whitespace-nowrap transition-colors hover:bg-muted"
+                className="cursor-pointer text-sm font-medium whitespace-nowrap transition-colors"
               >
-                {item.label}
+                <StaggerChars
+                  className="rounded-xl px-3.5 py-2 text-sm font-medium whitespace-nowrap hover:bg-muted"
+                  text={item.label}
+                />
               </button>
             ))}
           </nav>
