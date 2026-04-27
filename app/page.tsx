@@ -1,19 +1,28 @@
-import { Button } from "@/components/ui/button"
+"use client"
+import ExpandableNavbar from "@/components/expandable-navbar"
+import { HeroSection } from "@/components/hero-section"
+import data from "@/data/hero-section.json"
+import { IconKey, resolveIcon } from "@/lib/contact-icon-map"
 
+const navItems = [
+  { label: "Inicio", href: "/" },
+  { label: "Features", href: "/features" },
+  { label: "Pricing", href: "/pricing " },
+  { label: "Docs", href: "/docs" },
+]
 export default function Page() {
+  const contacts = data.contacts.map((item) => ({
+    ...item,
+    Icon: resolveIcon(item.icon as IconKey, item.color),
+  }))
+
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <HeroSection.Root>
+      <HeroSection.Form />
+      <HeroSection.Title />
+      <HeroSection.Contact contacts={contacts} />
+
+      <ExpandableNavbar items={navItems} />
+    </HeroSection.Root>
   )
 }

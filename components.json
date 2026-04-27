@@ -12,6 +12,8 @@
   },
   "iconLibrary": "remixicon",
   "rtl": false,
+  "menuColor": "default-translucent",
+  "menuAccent": "subtle",
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils",
@@ -19,7 +21,8 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "menuColor": "default-translucent",
-  "menuAccent": "subtle",
-  "registries": {}
+  "registries": {
+    "@magicui": "https://magicui.design/r/{name}",
+    "@scrollxui": "https://www.scrollxui.dev/registry/{name}.json"
+  }
 }

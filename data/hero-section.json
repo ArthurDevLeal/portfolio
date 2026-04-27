@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "icon": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com",
+      "color": "#0072b1",
+      "className": "bg-[#0072b1] text-white",
+      "classNameArrow": "bg-[#0072b1]"
+    },
+    {
+      "icon": "github",
+      "name": "GitHub",
+      "url": "https://www.github.com",
+      "color": "#333",
+      "className": "bg-[#333] text-white",
+      "classNameArrow": "bg-[#333]"
+    },
+    {
+      "icon": "email",
+      "name": "Email",
+      "url": "mailto:example@email.com",
+      "color": "#c23a2b",
+      "className": "bg-[#c23a2b] text-white",
+      "classNameArrow": "bg-[#c23a2b]"
+    }
+  ]
+}
