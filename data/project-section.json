@@ -1,0 +1,90 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Brasa Menu App",
+      "description": "Sistema completo de gestão de cardápio virtual para restaurantes, permitindo que administradores gerenciem produtos, categorias, promoções e configurações do estabelecimento. Com foco em performance e escalabilidade, a plataforma oferece uma experiência intuitiva tanto para gerentes quanto para clientes, facilitando o acesso ao cardápio digital e visualização de métricas em tempo real.",
+      "skillsGroup": [
+        {
+          "category": "Front-end",
+          "skills": [
+            { "name": "React", "isShiny": true },
+            { "name": "Next.js", "isShiny": false },
+            { "name": "Tailwind CSS", "isShiny": false }
+          ]
+        },
+        {
+          "category": "Back-end",
+          "skills": [
+            { "name": "Node.js", "isShiny": true },
+            { "name": "Express.js", "isShiny": false },
+            { "name": "Prisma", "isShiny": false }
+          ]
+        },
+        {
+          "category": "Linguagens e Banco de Dados",
+          "skills": [
+            { "name": "Typescript", "isShiny": false },
+            { "name": "PostgreSQL", "isShiny": false }
+          ]
+        },
+        {
+          "category": "Outros",
+          "skills": [
+            { "name": "Figma", "isShiny": false },
+            { "name": "Insomnia", "isShiny": false }
+          ]
+        }
+      ],
+      "images": [
+        "/brasa.png",
+        "/brasa.png"
+      ],
+      "textSpeed": 0.1
+    },
+     {
+      "id": "2",
+      "title": "Lumina",
+      "description": "Uma plataforma inteligente de gestão financeira pessoal, desenvolvida para simplificar o controle de receitas, despesas e metas financeiras. Criada com foco em usabilidade e análise de dados, a Lumina auxilia usuários a tomar decisões financeiras mais informadas através de relatórios detalhados, categorização automática de transações e acompanhamento de objetivos financeiros em tempo real.",
+      "skillsGroup": [
+        {
+          "category": "Front-end",
+          "skills": [
+            { "name": "React", "isShiny": true },
+            { "name": "Next.js", "isShiny": false },
+            { "name": "Tailwind CSS", "isShiny": false }
+          ]
+        },
+        {
+          "category": "Back-end",
+          "skills": [
+            { "name": "Node.js", "isShiny": true },
+            { "name": "Express.js", "isShiny": false },
+            { "name": "Prisma", "isShiny": false }
+          ]
+        },
+        {
+          "category": "Linguagens e Banco de Dados",
+          "skills": [
+            { "name": "Typescript", "isShiny": false },
+            { "name": "PostgreSQL", "isShiny": false }
+          ]
+        },
+        {
+          "category": "Outros",
+          "skills": [
+            { "name": "Figma", "isShiny": false },
+            { "name": "Insomnia", "isShiny": false }
+          ]
+        }
+      ],
+      "images": [
+        "/lumina.png",
+        "/lumina.png"
+      ],
+      "textSpeed": 0.1,
+      "github":"www.github.com/arthurdevleal/lumina",
+      "url":"www.lumina.com"
+    }
+  ]
+}

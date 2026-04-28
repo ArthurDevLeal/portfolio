@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-
+@import "lenis/dist/lenis.css";
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -37,6 +37,13 @@
     --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
     --sidebar-border: oklch(0.92 0.004 286.32);
     --sidebar-ring: oklch(0.705 0.015 286.067);
+    --skill-fe: oklch(0.62 0.13 200);
+    --skill-be: oklch(0.65 0.17 35);
+    --skill-db: oklch(0.7 0.16 70);
+    --skill-ops: oklch(0.55 0.13 250);
+    --skill-dgn: oklch(51.053% 0.21677 313.945);
+    --skill-mb: oklch(0.5 0.1 120);
+    --skill-lb: oklch(63.26% 0.28943 323.892);
 }
 
 .dark {
@@ -71,6 +78,13 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.552 0.016 285.938);
+    --skill-fe: oklch(0.45 0.085 224.283);
+    --skill-be: oklch(0.65 0.17 35);
+    --skill-db: oklch(0.7 0.16 70);
+    --skill-ops: oklch(0.55 0.13 250);
+    --skill-dgn: oklch(51.053% 0.21677 313.945);
+    --skill-mb: oklch(0.5 0.1 120);
+    --skill-lb: oklch(63.26% 0.28943 323.892);
 }
 
 @theme inline {
@@ -123,6 +137,14 @@
     opacity: 0;
         }
     }
+  @keyframes shine {
+  0% {
+    background-position: 100%;
+        }
+  100% {
+    background-position: -100%;
+        }
+    }
 }
 
 @layer base {
@@ -138,4 +160,46 @@
   html {
     @apply font-sans;
     }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+@layer utilities {
+  .animate-shine {
+    animation: shine 5s linear infinite;
+    }
+}
+
+@layer utilities {
+  .animate-shine {
+    animation: shine 5s linear infinite;
+  }
+}
+ 
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
 }

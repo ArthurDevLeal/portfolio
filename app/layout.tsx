@@ -1,5 +1,6 @@
 import { Inter, Space_Grotesk } from "next/font/google"
 
+import { LenisProvider } from "@/components/lenis-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
@@ -30,7 +31,9 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <TooltipProvider>{children}</TooltipProvider>
+          <LenisProvider>
+            <TooltipProvider>{children}</TooltipProvider>
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>

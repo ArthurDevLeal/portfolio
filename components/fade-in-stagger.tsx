@@ -10,13 +10,21 @@ interface MotionListProps extends HTMLMotionProps<"div"> {
   children: ReactNode
   className?: string
   staggerDelay?: number
+  delayStart?: number
 }
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: (staggerDelay: number = 0.1) => ({
+  visible: ({
+    staggerDelay = 0.1,
+    delayStart = 0,
+  }: {
+    staggerDelay: number
+    delayStart: number
+  }) => ({
     opacity: 1,
     transition: {
+      delayChildren: delayStart,
       staggerChildren: staggerDelay,
     },
   }),
@@ -53,22 +61,23 @@ export const MotionList = ({
   children,
   className,
   staggerDelay = 0.1,
+  delayStart = 0,
   ...props
 }: MotionListProps) => {
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
         exit="exit"
-        custom={staggerDelay}
+        viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+        custom={{ staggerDelay, delayStart }}
         className={className}
         {...props}
       >
         {React.Children.map(children, (child) => {
           if (!child) return null
-
           return (
             <motion.div variants={itemVariants as Variants}>{child}</motion.div>
           )

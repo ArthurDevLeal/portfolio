@@ -16,6 +16,16 @@ interface ExpandableNavbarProps {
   logo?: ReactNode
   cta?: ReactNode
   className?: string
+  /**
+   * When true, the navbar will auto-collapse the first time the user
+   * scrolls past `scrollThreshold` pixels. After that it behaves normally.
+   */
+  autoCollapseOnFirstScroll?: boolean
+  /**
+   * How many px the user must scroll before the auto-collapse fires.
+   * Defaults to 80% of the viewport height (roughly when the hero leaves).
+   */
+  scrollThreshold?: number
 }
 
 type AnimationStage =
@@ -32,11 +42,16 @@ const ExpandableNavbar = ({
   logo,
   cta,
   className,
+  autoCollapseOnFirstScroll = false,
+  scrollThreshold,
 }: ExpandableNavbarProps) => {
   const [stage, setStage] = useState<AnimationStage>("fullyExpanded")
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const [fullWidth, setFullWidth] = useState(52)
+
+  // Tracks whether the one-time auto-collapse has already fired
+  const hasAutoCollapsed = useRef(false)
 
   useEffect(() => {
     if (contentRef.current) {
@@ -61,6 +76,7 @@ const ExpandableNavbar = ({
   const isCollapsed = stage === "collapsed"
   const isExpanded = stage === "fullyExpanded"
 
+  // ── Click-outside collapse ─────────────────────────────────────────────────
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -74,6 +90,28 @@ const ExpandableNavbar = ({
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [isExpanded])
+
+  // ── One-time auto-collapse on first scroll ─────────────────────────────────
+  useEffect(() => {
+    if (!autoCollapseOnFirstScroll) return
+
+    const threshold =
+      scrollThreshold ?? window.innerHeight * 0.8
+
+    const handleScroll = () => {
+      if (hasAutoCollapsed.current) return
+
+      if (window.scrollY > threshold) {
+        hasAutoCollapsed.current = true
+        handleCollapse()
+        // No need to keep listening after it fires
+        window.removeEventListener("scroll", handleScroll)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [autoCollapseOnFirstScroll, scrollThreshold])
 
   return (
     <div className="pointer-events-none fixed right-0 bottom-8 left-0 z-50 flex justify-center">
@@ -101,14 +139,12 @@ const ExpandableNavbar = ({
             stage === "collapsed" || stage === "movingToLeft"
               ? "calc(50vw - 26px - 2rem)"
               : 0,
-
           width:
             stage === "widthExpanding" ||
             stage === "fullyExpanded" ||
             stage === "contentFadingOut"
               ? fullWidth
               : "52px",
-
           borderRadius:
             stage === "fullyExpanded" ||
             stage === "widthExpanding" ||
