@@ -2,7 +2,7 @@ export function SectionHeader() {
   return (
     <header className="pointer-events-none absolute inset-x-0 top-0 px-16 pt-24">
       <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-        02 — Stack
+       Stack
       </p>
       <h2 className="max-w-4xl text-balance font-sans text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
         Tech skills,
