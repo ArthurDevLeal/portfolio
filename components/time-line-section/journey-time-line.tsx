@@ -1,9 +1,10 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
-import { TimelineEntry, TimelineItem } from "./time-line-item"
+import { useEffect, useRef, useState } from "react"
+import { MotionList } from "../fade-in-stagger"
 import { JourneyHeader } from "./journey-header"
+import { TimelineEntry, TimelineItem } from "./time-line-item"
 
 type Props = {
   entries: TimelineEntry[]
@@ -70,21 +71,21 @@ export function JourneyTimeline({ entries }: Props) {
       aria-labelledby="jornada-title"
       className="relative w-full bg-background"
     >
-      <JourneyHeader/>
+      <JourneyHeader />
       <div className="relative mt-24 w-full pb-32 sm:mt-32 sm:pb-40">
         <div
           className={cn(
             "relative grid w-full gap-x-8 sm:gap-x-12 lg:gap-x-24",
             "grid-cols-[100px_1fr] px-6",
             "sm:grid-cols-[160px_1fr] sm:px-10",
-            "lg:grid-cols-[220px_1fr] lg:px-16",
+            "lg:grid-cols-[220px_1fr] lg:px-16"
           )}
         >
           <div
             aria-hidden
             className={cn(
               "pointer-events-none absolute top-0 bottom-0 w-px bg-border",
-              "left-71",
+              "left-71"
             )}
           />
 
@@ -123,14 +124,15 @@ export function JourneyTimeline({ entries }: Props) {
                         <span
                           className={cn(
                             "font-mono font-light tracking-tighter text-foreground",
-                            "text-5xl sm:text-7xl lg:text-8xl",
+                            "text-5xl sm:text-7xl lg:text-8xl"
                           )}
                           style={{
                             writingMode: "vertical-rl",
                             transform: "rotate(180deg)",
                             opacity,
                             scale: isActive ? "1" : "0.92",
-                            transition: "opacity 300ms ease-out, scale 300ms ease-out",
+                            transition:
+                              "opacity 300ms ease-out, scale 300ms ease-out",
                           }}
                         >
                           {entry.year}
@@ -143,13 +145,12 @@ export function JourneyTimeline({ entries }: Props) {
 
               <span
                 aria-hidden
-                className="pointer-events-none absolute right-0 top-1/2 z-20 size-3 -translate-y-1/2 translate-x-1/2 rounded-full border-2 border-primary bg-background"
+                className="pointer-events-none absolute top-1/2 right-0 z-20 size-3 translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-primary bg-background"
               />
             </div>
           </div>
 
-          {/* RIGHT: conteúdo que rola */}
-          <div className="py-[40vh]">
+          <MotionList className="py-[40vh]">
             {entries.map((entry, i) => (
               <div
                 key={entry.year}
@@ -159,13 +160,13 @@ export function JourneyTimeline({ entries }: Props) {
                 className={cn(
                   "py-24 sm:py-32 lg:py-40",
                   i === 0 && "pt-0 sm:pt-0 lg:pt-0",
-                  i === entries.length - 1 && "pb-0 sm:pb-0 lg:pb-0",
+                  i === entries.length - 1 && "pb-0 sm:pb-0 lg:pb-0"
                 )}
               >
                 <TimelineItem entry={entry} index={i} />
               </div>
             ))}
-          </div>
+          </MotionList>
         </div>
       </div>
     </section>
