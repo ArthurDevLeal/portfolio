@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "year": "2022",
+      "title": "O início de tudo",
+      "subtitle": "Primeiros passos",
+      "description": "Comecei do zero, sem saber o que era um terminal. Mergulhei em tutoriais, fiz meus primeiros sites estáticos e descobri que resolver problemas com código era exatamente o que eu queria fazer pelos próximos anos.",
+      "skills": ["HTML", "CSS", "JavaScript", "Git"],
+      "image": "/journey/code-2022.jpg",
+      "imageAlt": "Caderno aberto com anotações de código sobre uma mesa de madeira"
+    },
+    {
+      "year": "2023",
+      "title": "Universidade",
+      "subtitle": "Ciência da Computação",
+      "description": "Ingressei na faculdade e a porta da teoria se abriu. Estruturas de dados, algoritmos, redes — peças que ainda estavam soltas começaram a se encaixar. Fora da sala de aula, comecei a participar de hackathons e grupos de estudo.",
+      "skills": ["Python", "C", "Algoritmos", "Linux"],
+      "image": "/journey/campus-2023.jpg",
+      "imageAlt": "Corredor minimalista de uma universidade com luz natural"
+    },
+    {
+      "year": "2024",
+      "title": "Primeiro estágio",
+      "subtitle": "Frontend Developer",
+      "description": "Entrei em uma startup como estagiário de frontend. Aprendi a trabalhar em equipe, code review, deploy em produção e a importância de escrever código que outras pessoas precisam ler. Foi onde descobri o React e nunca mais soltei.",
+      "skills": ["React", "TypeScript", "Tailwind", "Figma"],
+      "image": "/journey/work-2024.jpg",
+      "imageAlt": "Mesa de trabalho minimalista com dois monitores"
+    },
+    {
+      "year": "2025",
+      "title": "Full-stack & autonomia",
+      "subtitle": "Desenvolvedor full-stack",
+      "description": "Subi um nível. Comecei a construir produtos do zero, do banco de dados à interface. Liderança técnica em projetos pequenos, mentoria para juniores e contribuições open-source viraram parte da rotina.",
+      "skills": ["Next.js", "Node.js", "PostgreSQL", "AWS"],
+      "image": null,
+      "imageAlt": null
+    },
+    {
+      "year": "2026",
+      "title": "Hoje",
+      "subtitle": "Construindo o que vem depois",
+      "description": "Foco em arquiteturas mais robustas, design systems e performance. Estudando IA aplicada a produto e refinando o jeito de pensar produto, não só código. A jornada continua — e o próximo capítulo já está sendo escrito.",
+      "skills": ["AI", "Arquitetura", "Design Systems", "DX"],
+      "image": null,
+      "imageAlt": null
+    }
+  ]
+}

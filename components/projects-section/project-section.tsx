@@ -1,3 +1,5 @@
+"use client"
+
 import { Project } from "@/types/project"
 import { useScroll } from "motion/react"
 import { useRef } from "react"
@@ -9,9 +11,10 @@ import { ProjectLinkButton } from "./project-link-button"
 
 interface ProjectSectionProps {
   project: Project
+  eyebrow?: string
 }
 
-export function ProjectSection({ project }: ProjectSectionProps) {
+export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -35,33 +38,43 @@ export function ProjectSection({ project }: ProjectSectionProps) {
       style={{ minHeight: `${images.length * 100}vh` }}
       className="relative"
     >
-      <div className="sticky top-0 grid h-screen grid-cols-2 gap-8 p-8">
-        <div className="flex flex-col justify-center">
-          <div className="relative h-10 overflow-visible">
-            <MotionList className="flex items-center gap-2">
-              <h2 className="font-heading text-3xl">{title}</h2>
+      <div className="sticky top-0 grid h-screen grid-cols-1 gap-8 px-6 pt-16 pb-8 sm:px-10 sm:pt-20 lg:grid-cols-2 lg:gap-12 lg:px-16 lg:pt-24">
+        <div className="flex flex-col">
+          <header>
+            {eyebrow ? (
+              <p className="mb-5 font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase">
+                {eyebrow}
+              </p>
+            ) : null}
+
+            <MotionList className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <h2 className="max-w-3xl font-sans text-6xl leading-[1.05] font-medium tracking-tight text-balance text-foreground">
+                {title}
+              </h2>
               <ProjectLinkButton github={github} url={url} />
             </MotionList>
-          </div>
 
-          <AnimatedTextGenerate
-            text={description}
-            className="text-sm font-normal text-muted-foreground"
-            textClassName="text-sm font-normal text-muted-foreground"
-            blurEffect
-            speed={textSpeed}
-          />
+            <div className="mt-6 max-w-xl ">
+              <AnimatedTextGenerate
+                text={description}
+                className="text-base leading-relaxed text-muted-foreground font-normal"
+                textClassName=" text-base leading-relaxed text-muted-foreground font-normal"
+                blurEffect
+                speed={textSpeed}
+              />
+            </div>
+          </header>
 
           <MotionList
             delayStart={textDelay}
-            className="mt-6 flex flex-wrap items-center gap-6"
+            className="mt-10 grid   items-center gap-6"
           >
             {skillsGroup.flatMap((group) => (
               <div
-                className="relative flex flex-wrap gap-2 rounded-md border px-2 py-2"
+                className="relative gap-2 rounded-md border px-2 py-2 w-fit"
                 key={group.category}
               >
-                <p className="absolute -top-2 -left-1 bg-background text-xs text-primary">
+                <p className="absolute -top-2 -left-1 bg-background px-1 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
                   {group.category}
                 </p>
                 {group.skills.map((skill) => (
@@ -78,7 +91,7 @@ export function ProjectSection({ project }: ProjectSectionProps) {
           </MotionList>
         </div>
 
-        <div className="relative h-full py-8">
+        <div className="relative hidden h-full lg:block">
           {images.map((src, i) => (
             <ProjectImage
               key={i}

@@ -15,7 +15,7 @@ interface ContactIconsProps {
 
 export function ContactIcons({ contacts }: ContactIconsProps) {
   return (
-    <MotionList className="flex items-center gap-4">
+    <MotionList className="flex items-center gap-4 mt-4">
       {contacts.map((contact) => (
         <Tooltip key={contact.name}>
           <TooltipTrigger asChild>

@@ -1,11 +1,11 @@
 import { ContactIcons } from "./contact-icons"
 import { Form } from "./form"
 import { Root } from "./root"
-import { Title } from "./title"
+import { HeroTitle } from "./title"
 
 export const HeroSection = {
   Root: Root,
-  Title: Title,
+  Title: HeroTitle,
   Form: Form,
   Contact: ContactIcons,
 }

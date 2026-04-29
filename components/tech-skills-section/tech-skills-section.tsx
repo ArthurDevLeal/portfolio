@@ -46,8 +46,7 @@ export function TechSkillsSection() {
       aria-label="Tech skills"
     >
       <div className="sticky top-0 h-svh w-full overflow-hidden">
-        <SectionHeader progress={scrollYProgress} total={total} />
-
+      <SectionHeader />
         <div className="absolute inset-0">
           {techSkills.map((skill, i) => (
             <SkillCard

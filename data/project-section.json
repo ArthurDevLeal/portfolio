@@ -22,7 +22,7 @@
           ]
         },
         {
-          "category": "Linguagens e Banco de Dados",
+          "category": "Linguagens e BD",
           "skills": [
             { "name": "Typescript", "isShiny": false },
             { "name": "PostgreSQL", "isShiny": false }
@@ -64,7 +64,7 @@
           ]
         },
         {
-          "category": "Linguagens e Banco de Dados",
+          "category": "Linguagens e BD",
           "skills": [
             { "name": "Typescript", "isShiny": false },
             { "name": "PostgreSQL", "isShiny": false }

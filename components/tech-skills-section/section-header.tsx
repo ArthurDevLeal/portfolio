@@ -1,23 +1,17 @@
-import { MotionValue, useMotionValueEvent } from "motion/react"
-import { useState } from "react"
-
-export function SectionHeader({
-  progress,
-  total,
-}: {
-  progress: MotionValue<number>
-  total: number
-}) {
-  const [count, setCount] = useState(0)
-  useMotionValueEvent(progress, "change", (v) => {
-    setCount(Math.min(total, Math.max(0, Math.round(v * (total + 0.4)))))
-  })
-
+export function SectionHeader() {
   return (
-    <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-start justify-between gap-6 px-6 pt-6 md:px-12 md:pt-10">
-      <div>
-        <h2 className="font-sans text-3xl">Tech skills</h2>
-      </div>
+    <header className="pointer-events-none absolute inset-x-0 top-0 px-16 pt-24">
+      <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+        02 — Stack
+      </p>
+      <h2 className="max-w-4xl text-balance font-sans text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        Tech skills,
+        <br />
+        <span className="italic text-muted-foreground">as que uso no dia a dia.</span>
+      </h2>
+      <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
+        Cards flutuam da direita e empilham conforme você desce. Hover para conhecer cada tech.
+      </p>
     </header>
   )
 }
