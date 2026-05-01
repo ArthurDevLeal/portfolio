@@ -67,7 +67,7 @@ export function JourneyTimeline({ entries }: Props) {
 
   return (
     <section
-      id="jornada"
+      id="timeline"
       aria-labelledby="jornada-title"
       className="relative w-full bg-background"
     >
@@ -167,6 +167,10 @@ export function JourneyTimeline({ entries }: Props) {
               </div>
             ))}
           </MotionList>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-100 h-64 bg-linear-to-b from-background/50 via-background to-background"
+          />
         </div>
       </div>
     </section>

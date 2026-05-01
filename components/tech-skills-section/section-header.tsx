@@ -1,6 +1,6 @@
 export function SectionHeader() {
   return (
-    <header className="pointer-events-none absolute inset-x-0 top-0 px-16 pt-24">
+    <header id="skills" className="pointer-events-none absolute inset-x-0 top-0 px-16 pt-24">
       <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
        Stack
       </p>

@@ -39,7 +39,8 @@ export function TechSkillsSection() {
   )
 
   return (
-    <section
+    <section  
+      id="tech"
       ref={sectionRef}
       className="relative bg-background text-foreground"
       style={{ height: sectionHeight }}

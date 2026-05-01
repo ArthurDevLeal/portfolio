@@ -7,7 +7,7 @@ interface ProjectsProps {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <div>
+    <div id="projects">
       {projects.map((project) => (
         <ProjectSection key={project.id} project={project} />
       ))}

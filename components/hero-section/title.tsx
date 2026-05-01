@@ -3,6 +3,7 @@
 import { useTypewriter } from "@/hooks/use-typewriter"
 import { cn } from "@/lib/utils"
 import { motion } from "motion/react"
+import { RevealLine } from "../ui/reveal-line"
 
 const ROLES = ["Web developer", "Desenvolvedor frontend"]
 
@@ -51,25 +52,3 @@ export function HeroTitle({
   )
 }
 
-function RevealLine({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: React.ReactNode
-  delay?: number
-  className?: string
-}) {
-  return (
-    <span className="block overflow-hidden pb-1">
-      <motion.span
-        initial={{ y: "110%" }}
-        animate={{ y: "0%" }}
-        transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
-        className={`block ${className}`}
-      >
-        {children}
-      </motion.span>
-    </span>
-  )
-}

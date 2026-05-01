@@ -1,21 +1,24 @@
 "use client"
 
+import { ContactCTA } from "@/components/contact-cta"
 import ExpandableNavbar from "@/components/expandable-navbar"
+import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/hero-section"
 import { ProjectsSection } from "@/components/projects-section"
 import { TechSkillsSectionIndex } from "@/components/tech-skills-section"
 import { JourneyTimeline } from "@/components/time-line-section/journey-time-line"
 import { TimelineEntry } from "@/components/time-line-section/time-line-item"
 import heroSectionData from "@/data/hero-section.json"
-import projectSectionData from "@/data/project-section.json"
 import journeyData from "@/data/journey.json"
+import projectSectionData from "@/data/project-section.json"
 import { IconKey, resolveIcon } from "@/lib/contact-icon-map"
 
 const navItems = [
-  { label: "Inicio", href: "/" },
-  { label: "Features", href: "/features" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Docs", href: "/docs" },
+  { label: "Inicio", href: "#hero" },
+  { label: "Projetos", href: "#projects" },
+  { label: "Skills", href: "#tech" },
+  { label: "TimeLine", href: "#timeline" },
+  { label: "Contact", href: "#contactCta" },
 ]
 
 export default function Page() {
@@ -26,8 +29,7 @@ export default function Page() {
   const projects = projectSectionData.projects.map((project) => ({
     ...project,
   }))
-    const entries = journeyData.entries as TimelineEntry[]
-
+  const entries = journeyData.entries as TimelineEntry[]
 
   return (
     <>
@@ -41,10 +43,12 @@ export default function Page() {
           items={navItems}
         />
       </HeroSection.Root>
-      <ProjectsSection.Projects  projects={projects} />
+      <ProjectsSection.Projects projects={projects} />
 
       <TechSkillsSectionIndex.TechSkills />
       <JourneyTimeline entries={entries} />
+      <ContactCTA />
+      <Footer contacts={contacts} />
     </>
   )
 }

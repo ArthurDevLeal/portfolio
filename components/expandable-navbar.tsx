@@ -41,6 +41,7 @@ const ExpandableNavbar = ({
   items,
   logo,
   cta,
+
   className,
   autoCollapseOnFirstScroll = false,
   scrollThreshold,
@@ -95,8 +96,7 @@ const ExpandableNavbar = ({
   useEffect(() => {
     if (!autoCollapseOnFirstScroll) return
 
-    const threshold =
-      scrollThreshold ?? window.innerHeight * 0.8
+    const threshold = scrollThreshold ?? window.innerHeight * 0.8
 
     const handleScroll = () => {
       if (hasAutoCollapsed.current) return
@@ -113,6 +113,28 @@ const ExpandableNavbar = ({
     return () => window.removeEventListener("scroll", handleScroll)
   }, [autoCollapseOnFirstScroll, scrollThreshold])
 
+  const handleScrollTo = (item: NavItem) => {
+    if (item.onClick) {
+      item.onClick()
+      return
+    }
+
+    if (!item.href || typeof window === "undefined") return
+
+    if (item.href.startsWith("#")) {
+      const id = item.href.slice(1)
+      const target = document.getElementById(id)
+      if (target) {
+        const offset = 80
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - offset
+        window.scrollTo({ top, behavior: "smooth" })
+      }
+      return
+    }
+
+    window.location.href = item.href
+  }
   return (
     <div className="pointer-events-none fixed right-0 bottom-8 left-0 z-50 flex justify-center">
       <div
@@ -123,9 +145,16 @@ const ExpandableNavbar = ({
         {logo && <div className="mr-1 shrink-0 border-r pr-3 pl-2">{logo}</div>}
         <nav className="flex items-center gap-0.5">
           {items.map((item, i) => (
-            <span key={i} className="px-3.5 py-2 text-sm font-medium">
-              {item.label}
-            </span>
+            <button
+              key={i}
+              onClick={() => handleScrollTo(item)}
+              className="cursor-pointer text-sm font-medium whitespace-nowrap transition-colors"
+            >
+              <StaggerChars
+                className="rounded-xl px-3.5 py-2 text-sm font-medium whitespace-nowrap hover:bg-muted"
+                text={item.label}
+              />
+            </button>
           ))}
         </nav>
         {cta && <div className="ml-auto shrink-0 pl-2">{cta}</div>}
@@ -213,7 +242,7 @@ const ExpandableNavbar = ({
             {items.map((item, i) => (
               <button
                 key={i}
-                onClick={item.onClick}
+                onClick={() => handleScrollTo(item)}
                 className="cursor-pointer text-sm font-medium whitespace-nowrap transition-colors"
               >
                 <StaggerChars
