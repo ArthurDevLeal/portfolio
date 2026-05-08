@@ -67,7 +67,7 @@ export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
 
           <MotionList
             delayStart={textDelay}
-            className="mt-10 grid   items-center gap-6"
+            className="mt-10 grid items-center gap-6"
           >
             {skillsGroup.flatMap((group) => (
               <div

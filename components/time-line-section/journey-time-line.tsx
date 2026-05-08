@@ -69,7 +69,7 @@ export function JourneyTimeline({ entries }: Props) {
     <section
       id="timeline"
       aria-labelledby="jornada-title"
-      className="relative w-full bg-background"
+      className="relative w-full bg-background mt-48"
     >
       <JourneyHeader />
       <div className="relative mt-24 w-full pb-32 sm:mt-32 sm:pb-40">

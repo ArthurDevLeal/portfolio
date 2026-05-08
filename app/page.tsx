@@ -1,5 +1,6 @@
 "use client"
 
+import AboutSection from "@/components/about-section/about-section"
 import { ContactCTA } from "@/components/contact-cta"
 import ExpandableNavbar from "@/components/expandable-navbar"
 import { Footer } from "@/components/footer"
@@ -46,6 +47,7 @@ export default function Page() {
       <ProjectsSection.Projects projects={projects} />
 
       <TechSkillsSectionIndex.TechSkills />
+      <AboutSection/>
       <JourneyTimeline entries={entries} />
       <ContactCTA />
       <Footer contacts={contacts} />
