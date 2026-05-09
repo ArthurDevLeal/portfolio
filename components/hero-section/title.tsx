@@ -1,3 +1,4 @@
+// title.tsx
 "use client"
 
 import { useTypewriter } from "@/hooks/use-typewriter"
@@ -29,7 +30,7 @@ export function HeroTitle({
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="flex items-center font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase"
+        className="flex items-center font-mono text-[10px] sm:text-xs tracking-[0.25em] text-muted-foreground uppercase"
       >
         <span>{eyebrowName}</span>
         <span aria-hidden className="mx-2 opacity-60">
@@ -42,7 +43,7 @@ export function HeroTitle({
         />
       </motion.p>
 
-      <h1 className="max-w-4xl font-sans text-7xl leading-[1.02] font-medium tracking-tight text-balance text-foreground">
+      <h1 className="max-w-4xl font-sans text-4xl leading-[1.02] font-medium tracking-tight text-balance text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
         <RevealLine delay={0.05}>Desenvolvendo ideias</RevealLine>
         <RevealLine delay={0.25} className="text-muted-foreground italic">
           através da computação Web.
@@ -51,4 +52,3 @@ export function HeroTitle({
     </div>
   )
 }
-

@@ -1,3 +1,4 @@
+// form.tsx
 "use client"
 
 import { Button } from "@/components/ui/button"
@@ -70,7 +71,7 @@ export function ContactForm() {
     <Sheet>
       <SheetTrigger asChild>
         <WavyButton
-          className="top-8 absolute right-8"
+          className="absolute top-4 right-4 sm:top-8 sm:right-8"
           variant={"outline"}
           size={"sm"}
         >
@@ -83,23 +84,23 @@ export function ContactForm() {
         side="left"
         className="w-full overflow-y-auto p-0 sm:max-w-md"
       >
-        <SheetHeader className="gap-0 border-b px-8 pt-12 pb-8">
+        <SheetHeader className="gap-0 border-b px-6 pt-8 pb-6 sm:px-8 sm:pt-12 sm:pb-8">
           <p className="font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase">
             Contato — Vamos conversar
           </p>
-          <SheetTitle className="font-sans text-3xl leading-[1.05] font-medium tracking-tight text-balance text-foreground sm:text-4xl">
+          <SheetTitle className="font-sans text-2xl leading-[1.05] font-medium tracking-tight text-balance text-foreground sm:text-3xl md:text-4xl">
             Vamos trabalhar
             <br />
             <span className="text-muted-foreground italic">juntos.</span>
           </SheetTitle>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-pretty text-muted-foreground">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-pretty text-muted-foreground sm:mt-5">
             Me conte sobre seu projeto. Eu retorno para você dentro de 24h.
           </p>
         </SheetHeader>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-6 px-8 py-8"
+          className="flex flex-col gap-6 px-6 py-6 sm:px-8 sm:py-8"
         >
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div className="flex flex-col gap-2">

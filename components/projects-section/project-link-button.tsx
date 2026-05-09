@@ -52,15 +52,15 @@ function LinkCard({
 
   return (
     <motion.button
-      initial={{ opacity: 0, scale: 0.4, y: 12 }}
+      initial={{ opacity: 0, scale: 0.85, y: 6 }}
       animate={
         isLaunching
           ? {
               opacity: 0,
-              scale: 1.15,
-              x: 40,
-              y: -40,
-              transition: { duration: 0.38, ease: [0.32, 0, 0.67, 0] },
+              scale: 1.1,
+              x: 30,
+              y: -30,
+              transition: { duration: 0.35, ease: [0.32, 0, 0.67, 0] },
             }
           : {
               opacity: 1,
@@ -74,14 +74,13 @@ function LinkCard({
               },
             }
       }
-      exit={{ opacity: 0, scale: 0.5, y: 8, transition: { duration: 0.18 } }}
+      exit={{ opacity: 0, scale: 0.85, y: 4, transition: { duration: 0.15 } }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={onLaunch}
       className={cn(
         "group relative flex items-center gap-3 rounded-md border bg-background px-4 py-3",
-        "text-left",
-        "min-w-40 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        "cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       )}
     >
       <motion.span
@@ -91,11 +90,11 @@ function LinkCard({
       >
         {icon}
       </motion.span>
-      <span className="flex flex-col overflow-hidden">
-        <span className="mb-1 text-xs leading-none text-muted-foreground">
+      <span className="flex flex-col gap-1 overflow-hidden">
+        <span className="text-xs leading-none text-muted-foreground">
           {label}
         </span>
-        <span className="max-w-27.5 truncate text-sm leading-none text-foreground">
+        <span className="max-w-36 truncate text-sm leading-none text-foreground">
           {sublabel}
         </span>
       </span>
@@ -124,15 +123,14 @@ export function ProjectLinkButton({
       window.open(href, "_blank", "noopener,noreferrer")
       setLaunching(null)
       setIsOpen(false)
-    }, 420)
+    }, 400)
   }
 
   return (
-    <div
-      className={cn("relative size-8 overflow-visible", className)}
-    >
+    <div className={cn("flex items-center", className)}>
       <AnimatePresence mode="wait">
         {!isOpen ? (
+          /* ── Trigger button ── */
           <motion.div
             key="trigger"
             initial={{ opacity: 0, scale: 0.7 }}
@@ -147,23 +145,21 @@ export function ProjectLinkButton({
               variant="outline"
               className="size-8 rounded-full"
               onClick={() => setIsOpen(true)}
-              aria-label="Check project links"
+              aria-label="Ver links do projeto"
             >
-              <span
-                className="flex items-center justify-center rounded-full size-8"
-              >
-                <LucideSquareArrowOutUpRight className="size-3.5" />
-              </span>
+              <LucideSquareArrowOutUpRight className="size-3.5" />
             </Button>
           </motion.div>
         ) : (
+          /* ── Expanded panel ── */
           <motion.div
             key="panel"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.2 } }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-2"
+            exit={{ opacity: 0, transition: { duration: 0.18 } }}
+            className="flex flex-wrap items-center gap-2"
           >
+            {/* Close button */}
             <motion.button
               initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
               animate={{
@@ -178,13 +174,14 @@ export function ProjectLinkButton({
               className={cn(
                 "flex size-8 shrink-0 items-center justify-center rounded-full border bg-background",
                 "text-muted-foreground transition-colors hover:text-foreground",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                "cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               )}
-              aria-label="Close"
+              aria-label="Fechar"
             >
               <X className="size-3.5" />
             </motion.button>
 
+            {/* Link cards */}
             <AnimatePresence>
               {github && (
                 <LinkCard
@@ -205,7 +202,7 @@ export function ProjectLinkButton({
                   icon={<Globe className="size-4" />}
                   label="Live site"
                   sublabel={extractDomain(url)}
-                  delay={github ? 0.12 : 0.05}
+                  delay={github ? 0.1 : 0.05}
                   onLaunch={() => handleLaunch(url, "url")}
                   isLaunching={launching === "url"}
                 />
@@ -217,7 +214,7 @@ export function ProjectLinkButton({
                   animate={{ opacity: 1, x: 0 }}
                   className="text-sm text-muted-foreground"
                 >
-                  No links yet.
+                  Sem links.
                 </motion.p>
               )}
             </AnimatePresence>

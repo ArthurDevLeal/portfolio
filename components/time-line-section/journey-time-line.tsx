@@ -10,11 +10,23 @@ type Props = {
   entries: TimelineEntry[]
 }
 
-const YEAR_SPACING = 360
+const YEAR_SPACING_DESKTOP = 360
+const YEAR_SPACING_MOBILE = 260
 
 export function JourneyTimeline({ entries }: Props) {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)")
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
+  }, [])
+
+  const YEAR_SPACING = isMobile ? YEAR_SPACING_MOBILE : YEAR_SPACING_DESKTOP
 
   useEffect(() => {
     let raf = 0
@@ -69,23 +81,23 @@ export function JourneyTimeline({ entries }: Props) {
     <section
       id="timeline"
       aria-labelledby="jornada-title"
-      className="relative w-full bg-background mt-48"
+      className="relative mt-24 w-full bg-background sm:mt-48"
     >
       <JourneyHeader />
-      <div className="relative mt-24 w-full pb-32 sm:mt-32 sm:pb-40">
+      <div className="relative mt-12 w-full pb-24 sm:mt-32 sm:pb-40">
         <div
           className={cn(
-            "relative grid w-full gap-x-8 sm:gap-x-12 lg:gap-x-24",
-            "grid-cols-[100px_1fr] px-6",
-            "sm:grid-cols-[160px_1fr] sm:px-10",
-            "lg:grid-cols-[220px_1fr] lg:px-16"
+            "relative grid w-full",
+            "grid-cols-[64px_1fr] gap-x-4 px-4",
+            "sm:grid-cols-[160px_1fr] sm:gap-x-12 sm:px-10",
+            "lg:grid-cols-[220px_1fr] lg:gap-x-24 lg:px-16"
           )}
         >
           <div
             aria-hidden
             className={cn(
               "pointer-events-none absolute top-0 bottom-0 w-px bg-border",
-              "left-71"
+              "left-[calc(64px+1rem)] sm:left-71"
             )}
           />
 
@@ -115,7 +127,7 @@ export function JourneyTimeline({ entries }: Props) {
                     return (
                       <div
                         key={entry.year}
-                        className="absolute inset-x-0 flex justify-end pr-4 sm:pr-6 lg:pr-8"
+                        className="absolute inset-x-0 flex justify-end pr-2 sm:pr-6 lg:pr-8"
                         style={{
                           top: `${i * YEAR_SPACING}px`,
                           transform: "translateY(-50%)",
@@ -124,7 +136,7 @@ export function JourneyTimeline({ entries }: Props) {
                         <span
                           className={cn(
                             "font-mono font-light tracking-tighter text-foreground",
-                            "text-5xl sm:text-7xl lg:text-8xl"
+                            "text-2xl sm:text-7xl lg:text-8xl"
                           )}
                           style={{
                             writingMode: "vertical-rl",
@@ -158,7 +170,7 @@ export function JourneyTimeline({ entries }: Props) {
                   itemRefs.current[i] = el
                 }}
                 className={cn(
-                  "py-24 sm:py-32 lg:py-40",
+                  "py-16 sm:py-32 lg:py-40",
                   i === 0 && "pt-0 sm:pt-0 lg:pt-0",
                   i === entries.length - 1 && "pb-0 sm:pb-0 lg:pb-0"
                 )}

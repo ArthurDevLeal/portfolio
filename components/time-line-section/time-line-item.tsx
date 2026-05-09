@@ -50,19 +50,19 @@ export function TimelineItem({ entry, index }: Props) {
         visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       )}
     >
-      <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+      <p className="mb-3 font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase sm:mb-5">
         {String(index + 1).padStart(2, "0")} / {entry.subtitle}
       </p>
 
-      <h3 className="font-sans leading-tight font-medium tracking-tight text-balance text-foreground text-5xl">
+      <h3 className="font-sans text-2xl leading-tight font-medium tracking-tight text-balance text-foreground sm:text-4xl lg:text-5xl">
         {entry.title}
       </h3>
 
-      <p className="mt-6 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground ">
+      <p className="mt-4 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground sm:mt-6">
         {entry.description}
       </p>
 
-      <ul className="mt-8 flex flex-wrap gap-2">
+      <ul className="mt-5 flex flex-wrap gap-2 sm:mt-8">
         {entry.skills.map((skill) => (
           <Badge key={skill} variant={"outline"}>
             {skill}
@@ -71,7 +71,7 @@ export function TimelineItem({ entry, index }: Props) {
       </ul>
 
       {entry.image && (
-        <div className="relative mt-10 aspect-4/3 w-full max-w-md overflow-hidden rounded-md border border-border bg-muted ">
+        <div className="relative mt-6 aspect-4/3 w-full max-w-xs overflow-hidden rounded-md border border-border bg-muted sm:mt-10 sm:max-w-md">
           <Image
             src={entry.image || "/placeholder.svg"}
             alt={entry.imageAlt ?? ""}

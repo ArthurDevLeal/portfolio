@@ -2,18 +2,18 @@ import Image from "next/image"
 
 export function IntroBlock() {
   return (
-    <div className="relative grid grid-cols-18 gap-x-6">
-      <div className="col-span-12">
-        <h2 className="max-w-4xl text-balance font-sans text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+    <div className="relative grid grid-cols-1 gap-8 md:grid-cols-18 md:gap-x-6 lg:gap-x-8">
+      <div className="md:col-span-12">
+        <h2 className="max-w-4xl text-balance font-sans text-3xl font-medium leading-[1.1] tracking-tight text-foreground sm:text-5xl sm:leading-[1.05] lg:text-6xl">
           Sou um desenvolvedor,
-          <br />
+          <br className="hidden sm:block" />
           mas, antes disso,{" "}
           <span className="font-medium text-muted-foreground italic">
             sou um curioso.
           </span>
         </h2>
 
-        <div className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground space-y-5">
+        <div className="mt-4 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground space-y-4 sm:mt-6 sm:text-base sm:space-y-5">
           <p>
             Meu nome é{" "}
             <span className="font-medium text-foreground">Arthur Leal</span>.
@@ -30,8 +30,8 @@ export function IntroBlock() {
         </div>
       </div>
 
-      <div className="col-span-6">
-        <div className="relative mx-auto aspect-4/5 w-full max-w-sm">
+      <div className="md:col-span-6">
+        <div className="relative mx-auto aspect-4/5 w-full max-w-xs sm:max-w-sm">
           <div
             aria-hidden
             className="absolute inset-0 -translate-x-3 translate-y-3 rotate-[-4deg] rounded-sm border border-border bg-card shadow-sm"

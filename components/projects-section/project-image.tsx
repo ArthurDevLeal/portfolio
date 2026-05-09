@@ -37,7 +37,9 @@ export function ProjectImage({
   const filter = useTransform(
     scrollYProgress,
     isLast ? [0, 1] : [grayscaleStart, grayscaleEnd],
-    isLast ? ["grayscale(0%)", "grayscale(0%)"] : ["grayscale(0%)", "grayscale(100%)"]
+    isLast
+      ? ["grayscale(0%)", "grayscale(0%)"]
+      : ["grayscale(0%)", "grayscale(100%)"]
   )
 
   return (

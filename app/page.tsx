@@ -45,12 +45,12 @@ export default function Page() {
         />
       </HeroSection.Root>
       <ProjectsSection.Projects projects={projects} />
-
       <TechSkillsSectionIndex.TechSkills />
-      <AboutSection/>
       <JourneyTimeline entries={entries} />
+      <AboutSection />
       <ContactCTA />
       <Footer contacts={contacts} />
+      
     </>
   )
 }

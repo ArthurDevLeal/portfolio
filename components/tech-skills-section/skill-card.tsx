@@ -2,6 +2,7 @@
 
 import { categoryMeta, type TechSkill } from "@/data/tech-skills"
 import { motion, useTransform, type MotionValue } from "motion/react"
+
 const CARD_W = 320
 const CARD_H = 420
 const CARD_W_MOBILE = 240
@@ -16,6 +17,7 @@ export function SkillCard({
   hovered,
   anyHovered,
   onHoverChange,
+  onSelect,
 }: {
   skill: TechSkill
   index: number
@@ -25,15 +27,20 @@ export function SkillCard({
   hovered: boolean
   anyHovered: boolean
   onHoverChange: (h: boolean) => void
+  onSelect: () => void
 }) {
   const meta = categoryMeta[skill.category]
 
-  const startBase = 0.06
-  const endBase = 0.94
-  const slot = (endBase - startBase) / total
-  const windowSize = slot * 1.5
-  const start = startBase + index * slot - windowSize * 0.25
-  const end = start + windowSize
+  // Cada card tem uma janela de animação proporcional dentro do range total
+  // Range usado: 0.0 a 0.9 (deixa 10% de "respiro" no final para o último card pousar)
+  const animRangeStart = 0.0
+  const animRangeEnd = 0.9
+  const totalRange = animRangeEnd - animRangeStart
+  const slotSize = totalRange / total
+
+  // Cada card começa a animar em seu slot
+  const start = animRangeStart + index * slotSize
+  const end = start + slotSize * 1.3 // overlap com o próximo card
 
   const cardW = viewport.mobile ? CARD_W_MOBILE : CARD_W
   const cardH = viewport.mobile ? CARD_H_MOBILE : CARD_H
@@ -45,15 +52,16 @@ export function SkillCard({
   const offX = viewport.w > 0 ? viewport.w + 80 : 1500
   const landedX = baseLeft + xJitter
 
+  // useTransform clampa por padrão, então quando progress > end, os valores ficam travados no final
   const x = useTransform(progress, [start, end], [offX, landedX])
   const y = useTransform(progress, [start, end], [-50 + index * 3, yJitter])
   const rot = useTransform(progress, [start, end], [14, rotJitter])
   const scale = useTransform(progress, [start, end], [0.92, 1])
-  const enterOpacity = useTransform(
-    progress,
-    [Math.max(0, start - 0.02), start + 0.01, end],
-    [0, 1, 1]
-  )
+
+  // Opacidade: aparece rapidamente quando o card começa a entrar e fica em 1
+  // Fica fully opaque quando progress atinge start + 30% do slot
+  const opacityFull = start + slotSize * 0.3
+  const enterOpacity = useTransform(progress, [start, opacityFull], [0, 1])
 
   const topPx = `calc(50% - ${cardH / 2}px)`
 
@@ -77,14 +85,15 @@ export function SkillCard({
     >
       <motion.button
         type="button"
-        onHoverStart={() => onHoverChange(true)}
-        onHoverEnd={() => onHoverChange(false)}
-        onFocus={() => onHoverChange(true)}
-        onBlur={() => onHoverChange(false)}
+        onHoverStart={() => !viewport.mobile && onHoverChange(true)}
+        onHoverEnd={() => !viewport.mobile && onHoverChange(false)}
+        onFocus={() => !viewport.mobile && onHoverChange(true)}
+        onBlur={() => !viewport.mobile && onHoverChange(false)}
+        onClick={onSelect}
         initial={false}
         animate={hovered ? { y: -12, scale: 1.04 } : { y: 0, scale: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 24, mass: 0.6 }}
-        aria-label={`${skill.name} — ${meta.label}`}
+        aria-label={`${skill.name} — ${meta.label}. Toque para ver detalhes.`}
         className="block h-full w-full rounded-2xl border border-border bg-card text-left text-card-foreground shadow-[0_30px_60px_-30px_rgba(0,0,0,0.45),0_8px_16px_-8px_rgba(0,0,0,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7),0_8px_16px_-8px_rgba(0,0,0,0.4)]"
         style={{ willChange: "transform", transformOrigin: "50% 100%" }}
       >

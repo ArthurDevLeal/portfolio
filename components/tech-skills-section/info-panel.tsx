@@ -1,20 +1,12 @@
 "use client"
 
-import { categoryMeta, techSkills, type TechSkill } from "@/data/tech-skills"
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-  type MotionValue,
-} from "motion/react"
-import { useEffect, useMemo, useRef, useState } from "react"
+import { categoryMeta, type TechSkill } from "@/data/tech-skills"
+import { AnimatePresence, motion } from "motion/react"
 
 export function InfoPanel({ skill }: { skill: TechSkill | null }) {
   return (
     <aside
-      className="pointer-events-none absolute top-1/2 right-12 z-99999 hidden w-95 max-w-[34vw] -translate-y-1/2 flex-col lg:flex"
+      className="pointer-events-none absolute top-1/2 right-12 z-[99999] hidden w-[380px] max-w-[34vw] -translate-y-1/2 flex-col lg:flex"
       aria-live="polite"
     >
       <AnimatePresence mode="wait">
