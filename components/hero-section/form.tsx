@@ -12,9 +12,7 @@ import {
 } from "@/components/ui/select"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -48,7 +46,7 @@ const PROJECT_TYPES = [
   { value: "web-app", label: "Website" },
   { value: "landing", label: "Landing Page" },
   { value: "design-system", label: "Design de projeto" },
-  { value: "consulting", label: "Mobile app" },
+  { value: "mobile-app", label: "Mobile app" },
   { value: "other", label: "Outro" },
 ]
 
@@ -70,9 +68,9 @@ export function ContactForm() {
     <Sheet>
       <SheetTrigger asChild>
         <WavyButton
-          className="absolute top-4 right-4 sm:top-8 sm:right-8"
-          variant={"outline"}
-          size={"sm"}
+          className="absolute top-4 right-4 z-10 sm:top-8 sm:right-8"
+          variant="outline"
+          size="sm"
         >
           <span className="mr-1 size-2 rounded-full bg-primary" />
           Disponível para projeto
@@ -83,26 +81,27 @@ export function ContactForm() {
         side="left"
         className="w-full overflow-y-auto p-0 sm:max-w-md"
       >
-        <SheetHeader className="gap-0 border-b px-6 pt-8 pb-6 sm:px-8 sm:pt-12 sm:pb-8">
+        <SheetHeader className="gap-0 border-b px-5 pt-8 pb-6 sm:px-8 sm:pt-12 sm:pb-8">
           <p className="font-mono text-xs tracking-[0.25em] text-muted-foreground uppercase">
             Contato — Vamos conversar
           </p>
-          <SheetTitle className="font-sans text-2xl leading-[1.05] font-medium tracking-tight text-balance text-foreground sm:text-3xl md:text-4xl">
+          <SheetTitle className="font-sans text-2xl leading-[1.05] font-medium tracking-tight text-balance text-foreground sm:text-3xl">
             Vamos trabalhar
             <br />
             <span className="text-muted-foreground italic">juntos.</span>
           </SheetTitle>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-pretty text-muted-foreground sm:mt-5">
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-pretty text-muted-foreground sm:mt-4">
             Me conte sobre seu projeto. Eu retorno para você dentro de 24h.
           </p>
         </SheetHeader>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-6 px-6 py-6 sm:px-8 sm:py-8"
+          className="flex flex-col gap-5 px-5 py-6 sm:px-8 sm:py-8"
         >
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <div className="flex flex-col gap-2">
+          {/* Nome e Email */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="flex flex-col gap-1.5">
               <Label
                 htmlFor="name"
                 className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase"
@@ -117,7 +116,7 @@ export function ContactForm() {
               )}
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5">
               <Label
                 htmlFor="email"
                 className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase"
@@ -138,17 +137,17 @@ export function ContactForm() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <Label className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
+          {/* Tipo de projeto */}
+          <div className="flex flex-col gap-1.5">
+            <Label
+              htmlFor="projectType"
+              className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase"
+            >
               03 — Tipo de projeto
             </Label>
-            <Select
-              onValueChange={(val) =>
-                setValue("projectType", val, { shouldValidate: true })
-              }
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Qual projeto estamos construindo?" />
+            <Select onValueChange={(val) => setValue("projectType", val)}>
+              <SelectTrigger id="projectType" className="w-full">
+                <SelectValue placeholder="Selecione..." />
               </SelectTrigger>
               <SelectContent>
                 {PROJECT_TYPES.map((type) => (
@@ -165,7 +164,8 @@ export function ContactForm() {
             )}
           </div>
 
-          <div className="flex flex-col gap-2">
+          {/* Mensagem */}
+          <div className="flex flex-col gap-1.5">
             <Label
               htmlFor="message"
               className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase"
@@ -174,8 +174,9 @@ export function ContactForm() {
             </Label>
             <Textarea
               id="message"
-              placeholder="Me conte sobre o projeto, cronograma e orçamento..."
-              className="min-h-32 resize-none"
+              placeholder="Conte um pouco sobre o projeto, prazo e orçamento..."
+              rows={5}
+              className="resize-none"
               {...register("message")}
             />
             {errors.message && (
@@ -185,30 +186,20 @@ export function ContactForm() {
             )}
           </div>
 
-          <SheetFooter className="mt-2 flex-row gap-2 p-0">
-            <SheetClose asChild>
-              <Button type="button" variant="ghost">
-                Cancelar
-              </Button>
-            </SheetClose>
-            <Button
-              type="submit"
-              className="group flex-1 gap-2"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <>
-                  <Spinner className="size-3" />
-                  <span>Enviando</span>
-                </>
-              ) : (
-                <>
-                  <span>Enviar mensagem</span>
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </>
-              )}
-            </Button>
-          </SheetFooter>
+          {/* Botão submit */}
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="mt-2 w-full"
+            size="lg"
+          >
+            {isSubmitting ? (
+              <Spinner className="mr-2 size-4" />
+            ) : (
+              <ArrowRight className="mr-2 size-4" />
+            )}
+            Enviar via WhatsApp
+          </Button>
         </form>
       </SheetContent>
     </Sheet>
