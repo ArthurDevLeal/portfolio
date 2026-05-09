@@ -36,13 +36,12 @@
           ]
         }
       ],
-      "images": [
-        "/brasa.png",
-        "/brasa.png"
-      ],
-      "textSpeed": 0.1
+      "images": ["/brasa.png", "/brasa2.png"],
+      "textSpeed": 0.1,
+      "github": "https://github.com/ArthurDevLeal/brasa-menu-front-end",
+      "url": "https://brasa-menu.vlsolutions.site/"
     },
-     {
+    {
       "id": "2",
       "title": "Lumina",
       "description": "Uma plataforma inteligente de gestão financeira pessoal, desenvolvida para simplificar o controle de receitas, despesas e metas financeiras. Criada com foco em usabilidade e análise de dados, a Lumina auxilia usuários a tomar decisões financeiras mais informadas através de relatórios detalhados, categorização automática de transações e acompanhamento de objetivos financeiros em tempo real.",
@@ -78,13 +77,10 @@
           ]
         }
       ],
-      "images": [
-        "/lumina.png",
-        "/lumina.png"
-      ],
+      "images": ["/lumina.png", "/lumina2.png"],
       "textSpeed": 0.1,
-      "github":"www.github.com/arthurdevleal/lumina",
-      "url":"www.lumina.com"
+      "github": "https://github.com/ArthurDevLeal/Lumina",
+      "url": "https://lumina.vlsolutions.site/"
     }
   ]
 }
