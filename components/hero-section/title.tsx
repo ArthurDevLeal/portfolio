@@ -1,4 +1,3 @@
-// title.tsx
 "use client"
 
 import { useTypewriter } from "@/hooks/use-typewriter"

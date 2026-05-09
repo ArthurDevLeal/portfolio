@@ -3,18 +3,11 @@
 import { techSkills } from "@/data/tech-skills"
 import { useMotionValue } from "motion/react"
 import { useEffect, useMemo, useRef, useState } from "react"
-import { InfoPanel } from "./info-panel"
-import { MobileSkillDrawer } from "./mobile-skill-drawer"
-import { ScrollHint } from "./scroll-hint"
-import { SectionHeader } from "./section-header"
-import { SkillCard } from "./skill-card"
+import { TechSkillsSectionIndex } from "."
 
 export function TechSkillsSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
-  // Em vez de usar useScroll do motion (que tem problemas quando há conteúdo grande
-  // abaixo da seção), calculamos o progresso manualmente baseado na posição
-  // do elemento na viewport. Isso é determinístico e independente do contexto da página.
   const scrollYProgress = useMotionValue(0)
 
   const [hoveredId, setHoveredId] = useState<string | null>(null)
@@ -33,8 +26,6 @@ export function TechSkillsSection() {
     return () => window.removeEventListener("resize", update)
   }, [])
 
-  // Listener manual de scroll: calcula o progresso baseado em onde a seção está
-  // na viewport. Funciona independentemente de quanto conteúdo existe acima ou abaixo.
   useEffect(() => {
     const calculateProgress = () => {
       const el = sectionRef.current
@@ -43,10 +34,6 @@ export function TechSkillsSection() {
       const rect = el.getBoundingClientRect()
       const viewportHeight = window.innerHeight
 
-      // A seção tem um sticky de 100vh. O scroll "útil" é (sectionHeight - viewportHeight).
-      // progress = 0 quando o topo da seção atinge o topo da viewport (rect.top === 0)
-      // progress = 1 quando o fundo da seção atinge o fundo da viewport
-      //              (rect.bottom === viewportHeight, ou seja, rect.top === viewportHeight - rect.height)
       const totalScrollDistance = rect.height - viewportHeight
 
       if (totalScrollDistance <= 0) {
@@ -54,19 +41,16 @@ export function TechSkillsSection() {
         return
       }
 
-      // rect.top vai de 0 (no início) até -totalScrollDistance (no final)
       const scrolled = -rect.top
       const progress = Math.max(0, Math.min(1, scrolled / totalScrollDistance))
 
       scrollYProgress.set(progress)
     }
 
-    // Recalcula em scroll, resize e quando a página carrega
     calculateProgress()
     window.addEventListener("scroll", calculateProgress, { passive: true })
     window.addEventListener("resize", calculateProgress)
 
-    // Recalcula após um delay para pegar mudanças de layout (imagens carregando, etc)
     const timeout = setTimeout(calculateProgress, 100)
 
     return () => {
@@ -77,8 +61,6 @@ export function TechSkillsSection() {
   }, [scrollYProgress])
 
   const total = techSkills.length
-  // Altura: 100vh para o sticky + scroll suficiente para todos os cards animarem
-  // Cada card precisa de aproximadamente 50vh de scroll para uma animação suave
   const sectionHeight = `${100 + total * 50}vh`
 
   const hoveredSkill = useMemo(
@@ -100,10 +82,10 @@ export function TechSkillsSection() {
       aria-label="Tech skills"
     >
       <div className="sticky top-0 h-svh w-full overflow-hidden">
-        <SectionHeader />
+        <TechSkillsSectionIndex.Header />
         <div className="absolute inset-0">
           {techSkills.map((skill, i) => (
-            <SkillCard
+            <TechSkillsSectionIndex.Card
               key={skill.id}
               skill={skill}
               index={i}
@@ -122,11 +104,11 @@ export function TechSkillsSection() {
           ))}
         </div>
 
-        <InfoPanel skill={hoveredSkill} />
-        <ScrollHint progress={scrollYProgress} />
+        <TechSkillsSectionIndex.InfoPanel skill={hoveredSkill} />
+        <TechSkillsSectionIndex.ScrollHint progress={scrollYProgress} />
       </div>
 
-      <MobileSkillDrawer
+      <TechSkillsSectionIndex.MobileDrawer
         skill={selectedSkill}
         onClose={() => setSelectedId(null)}
       />

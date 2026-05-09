@@ -1,5 +1,4 @@
-import { IdentityCard } from "./identity-card"
-import { IntroBlock } from "./intro-block"
+import { AboutSectionIndex } from "."
 
 export default function AboutSection() {
   return (
@@ -12,8 +11,8 @@ export default function AboutSection() {
         Sobre mim
       </p>
 
-      <IntroBlock />
-      <IdentityCard />
+      <AboutSectionIndex.IntroBlock />
+      <AboutSectionIndex.Card />
     </section>
   )
 }

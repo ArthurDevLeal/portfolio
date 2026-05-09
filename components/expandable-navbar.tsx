@@ -95,7 +95,6 @@ const ExpandableNavbar = ({
     }
   }, [isExpanded])
 
-  // Click-outside close (mobile)
   useEffect(() => {
     if (!mobileOpen) return
     const handleClickOutside = (e: MouseEvent | TouchEvent) => {
@@ -113,7 +112,6 @@ const ExpandableNavbar = ({
     }
   }, [mobileOpen])
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMobileOpen(false)
@@ -122,7 +120,6 @@ const ExpandableNavbar = ({
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  // One-time auto-collapse on first scroll (desktop)
   useEffect(() => {
     if (!autoCollapseOnFirstScroll) return
 
@@ -167,10 +164,8 @@ const ExpandableNavbar = ({
       return
     }
 
-    // Fecha o menu. A navegação acontecerá naturalmente através da tag <a>.
     setMobileOpen(false)
 
-    // Fallback de segurança se não for engatilhado através da tag <a>
     if (e && e.currentTarget.tagName !== "A" && typeof window !== "undefined") {
       window.location.href = item.href
     }
@@ -178,7 +173,6 @@ const ExpandableNavbar = ({
 
   return (
     <div className="pointer-events-none fixed right-0 bottom-8 left-0 z-50 flex justify-center px-4">
-      {/* ── Mobile navbar ─────────────────────────────────────────────── */}
       <motion.div
         ref={mobileRef}
         className={cn(
@@ -188,7 +182,6 @@ const ExpandableNavbar = ({
         animate={{ borderRadius: mobileOpen ? 20 : 18 }}
         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
       >
-        {/* Bar row */}
         <div className="flex h-13 items-center justify-between px-2">
           {logo && <div className="shrink-0 border-r pr-3 pl-1">{logo}</div>}
           <div className="ml-auto flex items-center gap-1">
@@ -227,7 +220,6 @@ const ExpandableNavbar = ({
           </div>
         </div>
 
-        {/* Expandable nav items */}
         <motion.div
           initial={false}
           animate={{ height: mobileOpen ? "auto" : 0 }}
@@ -257,6 +249,7 @@ const ExpandableNavbar = ({
 
               if (isLink) {
                 return (
+                  // @ts-ignore
                   <motion.a
                     key={i}
                     href={item.href}
@@ -269,6 +262,7 @@ const ExpandableNavbar = ({
               }
 
               return (
+                // @ts-ignore
                 <motion.button key={i} {...commonProps} {...motionProps}>
                   {item.label}
                 </motion.button>
@@ -278,9 +272,7 @@ const ExpandableNavbar = ({
         </motion.div>
       </motion.div>
 
-      {/* ── Desktop navbar (original) ──────────────────────────────────── */}
       <div className="hidden md:flex">
-        {/* Hidden measurement div */}
         <div
           ref={contentRef}
           className="pointer-events-none invisible absolute flex items-center gap-1 pr-2 whitespace-nowrap"

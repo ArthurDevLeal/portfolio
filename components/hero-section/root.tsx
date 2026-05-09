@@ -1,4 +1,3 @@
-// root.tsx
 import { Children } from "@/types/children"
 
 export function Root({ children }: { children: Children }) {

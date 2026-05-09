@@ -130,7 +130,6 @@ export function ProjectLinkButton({
     <div className={cn("flex items-center", className)}>
       <AnimatePresence mode="wait">
         {!isOpen ? (
-          /* ── Trigger button ── */
           <motion.div
             key="trigger"
             initial={{ opacity: 0, scale: 0.7 }}
@@ -151,7 +150,6 @@ export function ProjectLinkButton({
             </Button>
           </motion.div>
         ) : (
-          /* ── Expanded panel ── */
           <motion.div
             key="panel"
             initial={{ opacity: 0 }}
@@ -159,7 +157,6 @@ export function ProjectLinkButton({
             exit={{ opacity: 0, transition: { duration: 0.18 } }}
             className="flex flex-wrap items-center gap-2"
           >
-            {/* Close button */}
             <motion.button
               initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
               animate={{
@@ -181,7 +178,6 @@ export function ProjectLinkButton({
               <X className="size-3.5" />
             </motion.button>
 
-            {/* Link cards */}
             <AnimatePresence>
               {github && (
                 <LinkCard

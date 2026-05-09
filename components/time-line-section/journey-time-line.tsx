@@ -2,9 +2,9 @@
 
 import { cn } from "@/lib/utils"
 import { useEffect, useRef, useState } from "react"
+import { TimeLineSection } from "."
 import { MotionList } from "../fade-in-stagger"
-import { JourneyHeader } from "./journey-header"
-import { TimelineEntry, TimelineItem } from "./time-line-item"
+import { TimelineEntry } from "./time-line-item"
 
 type Props = {
   entries: TimelineEntry[]
@@ -83,7 +83,7 @@ export function JourneyTimeline({ entries }: Props) {
       aria-labelledby="jornada-title"
       className="relative mt-24 w-full bg-background sm:mt-48"
     >
-      <JourneyHeader />
+      <TimeLineSection.Header />
       <div className="relative mt-12 w-full pb-24 sm:mt-32 sm:pb-40">
         <div
           className={cn(
@@ -97,7 +97,7 @@ export function JourneyTimeline({ entries }: Props) {
             aria-hidden
             className={cn(
               "pointer-events-none absolute top-0 bottom-0 w-px bg-border",
-              "left-[calc(64px+1rem)] sm:left-71"
+              "left-20 sm:left-71"
             )}
           />
 
@@ -175,7 +175,7 @@ export function JourneyTimeline({ entries }: Props) {
                   i === entries.length - 1 && "pb-0 sm:pb-0 lg:pb-0"
                 )}
               >
-                <TimelineItem entry={entry} index={i} />
+                <TimeLineSection.Item entry={entry} index={i} />
               </div>
             ))}
           </MotionList>

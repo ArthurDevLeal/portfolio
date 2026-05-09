@@ -31,16 +31,13 @@ export function SkillCard({
 }) {
   const meta = categoryMeta[skill.category]
 
-  // Cada card tem uma janela de animação proporcional dentro do range total
-  // Range usado: 0.0 a 0.9 (deixa 10% de "respiro" no final para o último card pousar)
   const animRangeStart = 0.0
   const animRangeEnd = 0.9
   const totalRange = animRangeEnd - animRangeStart
   const slotSize = totalRange / total
 
-  // Cada card começa a animar em seu slot
   const start = animRangeStart + index * slotSize
-  const end = start + slotSize * 1.3 // overlap com o próximo card
+  const end = start + slotSize * 1.3 
 
   const cardW = viewport.mobile ? CARD_W_MOBILE : CARD_W
   const cardH = viewport.mobile ? CARD_H_MOBILE : CARD_H
@@ -52,14 +49,11 @@ export function SkillCard({
   const offX = viewport.w > 0 ? viewport.w + 80 : 1500
   const landedX = baseLeft + xJitter
 
-  // useTransform clampa por padrão, então quando progress > end, os valores ficam travados no final
   const x = useTransform(progress, [start, end], [offX, landedX])
   const y = useTransform(progress, [start, end], [-50 + index * 3, yJitter])
   const rot = useTransform(progress, [start, end], [14, rotJitter])
   const scale = useTransform(progress, [start, end], [0.92, 1])
 
-  // Opacidade: aparece rapidamente quando o card começa a entrar e fica em 1
-  // Fica fully opaque quando progress atinge start + 30% do slot
   const opacityFull = start + slotSize * 0.3
   const enterOpacity = useTransform(progress, [start, opacityFull], [0, 1])
 

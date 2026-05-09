@@ -11,7 +11,6 @@ export function MobileSkillDrawer({
   skill: TechSkill | null
   onClose: () => void
 }) {
-  // Bloqueia o scroll do body quando o drawer está aberto
   useEffect(() => {
     if (skill) {
       const original = document.body.style.overflow
@@ -22,7 +21,6 @@ export function MobileSkillDrawer({
     }
   }, [skill])
 
-  // Fecha com a tecla ESC
   useEffect(() => {
     if (!skill) return
     const onKey = (e: KeyboardEvent) => {
@@ -37,12 +35,11 @@ export function MobileSkillDrawer({
       {skill ? (
         <motion.div
           key="drawer-root"
-          className="fixed inset-0 z-[9999] lg:hidden"
+          className="fixed inset-0 z-9999 lg:hidden"
           initial={{ pointerEvents: "none" }}
           animate={{ pointerEvents: "auto" }}
           exit={{ pointerEvents: "none" }}
         >
-          {/* Backdrop com blur */}
           <motion.button
             type="button"
             aria-label="Fechar detalhes"
@@ -55,7 +52,6 @@ export function MobileSkillDrawer({
             style={{ WebkitBackdropFilter: "blur(12px)" }}
           />
 
-          {/* Drawer */}
           <motion.div
             key="drawer-panel"
             role="dialog"
@@ -72,7 +68,6 @@ export function MobileSkillDrawer({
             }}
             className="absolute right-0 bottom-0 left-0 max-h-[85vh] overflow-y-auto rounded-t-3xl border-t border-border bg-card text-card-foreground shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.5)]"
           >
-            {/* Handle */}
             <div className="sticky top-0 z-10 flex justify-center bg-card pt-3 pb-2">
               <span
                 className="h-1.5 w-12 rounded-full bg-muted-foreground/30"
@@ -80,7 +75,6 @@ export function MobileSkillDrawer({
               />
             </div>
 
-            {/* Color bar */}
             <div
               className="h-1 w-full"
               style={{ background: categoryMeta[skill.category].var }}

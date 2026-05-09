@@ -1,4 +1,3 @@
-// components/providers/lenis-provider.tsx
 "use client";
 
 import { createContext, useContext, useEffect, useState, useRef } from "react";

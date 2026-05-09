@@ -3,18 +3,16 @@
 import { Project } from "@/types/project"
 import { motion, useScroll } from "motion/react"
 import { useRef } from "react"
+import { ProjectsSection } from "."
 import { MotionList } from "../fade-in-stagger"
 import { AnimatedTextGenerate } from "../ui/animated-textgenerate"
 import { Badge } from "../ui/badge"
-import { ProjectImage } from "./project-image"
-import { ProjectLinkButton } from "./project-link-button"
 
 interface ProjectSectionProps {
   project: Project
   eyebrow?: string
 }
 
-// Mobile: imagens empilhadas com fade-in simples
 function MobileImages({ images }: { images: string[] }) {
   return (
     <div className="flex flex-col gap-3">
@@ -60,10 +58,8 @@ export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
 
   return (
     <>
-      {/* ── Mobile layout (< md) ───────────────────────────────────────── */}
       <div className="block px-4 py-12 md:hidden">
         <div className="flex flex-col gap-8">
-          {/* Content */}
           <div className="flex flex-col gap-4">
             {eyebrow && (
               <p className="font-mono text-[10px] tracking-[0.25em] text-muted-foreground uppercase">
@@ -74,7 +70,7 @@ export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
               <h2 className="font-sans text-3xl leading-[1.1] font-medium tracking-tight text-balance text-foreground">
                 {title}
               </h2>
-              <ProjectLinkButton github={github} url={url} />
+              <ProjectsSection.LinkButton github={github} url={url} />
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {description}
@@ -103,19 +99,16 @@ export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
             </div>
           </div>
 
-          {/* Images stacked */}
           <MobileImages images={images} />
         </div>
       </div>
 
-      {/* ── Desktop layout (≥ md) — sticky scroll ─────────────────────── */}
       <div
         ref={containerRef}
         style={{ minHeight: `${images.length * 100}vh` }}
         className="relative hidden md:block"
       >
         <div className="sticky top-0 grid h-screen grid-cols-2 gap-8 px-10 pt-20 pb-8 lg:gap-12 lg:px-16 lg:pt-24">
-          {/* Content Column */}
           <div className="flex flex-col">
             <header>
               {eyebrow && (
@@ -127,7 +120,7 @@ export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
                 <h2 className="max-w-3xl font-sans text-5xl leading-[1.05] font-medium tracking-tight text-balance text-foreground lg:text-6xl">
                   {title}
                 </h2>
-                <ProjectLinkButton github={github} url={url} />
+                <ProjectsSection.LinkButton github={github} url={url} />
               </MotionList>
               <div className="mt-6 max-w-xl">
                 <AnimatedTextGenerate
@@ -166,10 +159,9 @@ export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
             </MotionList>
           </div>
 
-          {/* Image Column — animated scroll */}
           <div className="relative h-full">
             {images.map((src, i) => (
-              <ProjectImage
+              <ProjectsSection.Image
                 key={i}
                 src={src}
                 index={i}
