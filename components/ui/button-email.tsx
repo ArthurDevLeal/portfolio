@@ -13,7 +13,7 @@ export function ButtonEmail({ email }: { email: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="group relative inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+      className="hidden group relative md:inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
       aria-label="Copiar e-mail"
     >
       <span className="relative inline-block h-5 overflow-hidden font-mono tracking-tight">
