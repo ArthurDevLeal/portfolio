@@ -1,11 +1,12 @@
-import type { Metadata } from "next" // Importe o tipo para ter autocomplete
-import { Inter, Space_Grotesk } from "next/font/google"
 import { LenisProvider } from "@/components/lenis-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
-import "./globals.css"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import type { Metadata } from "next" // Importe o tipo para ter autocomplete
+import { Inter, Space_Grotesk } from "next/font/google"
+import "./globals.css"
 
 const interHeading = Inter({ subsets: ["latin"], variable: "--font-heading" })
 const spaceGrotesk = Space_Grotesk({
@@ -15,8 +16,16 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Arthur Leal | Desenvolvedor Web",
-  description: "Desenvolvedor focado em criar produtos digitais com React, Next.js e IA. Transformando ideias em experiências reais de ponta a ponta.",
-  keywords: ["Arthur Leal", "Desenvolvedor Front-end", "Full-stack", "Next.js", "React", "Portfólio"],
+  description:
+    "Desenvolvedor focado em criar produtos digitais com React, Next.js e IA. Transformando ideias em experiências reais de ponta a ponta.",
+  keywords: [
+    "Arthur Leal",
+    "Desenvolvedor Front-end",
+    "Full-stack",
+    "Next.js",
+    "React",
+    "Portfólio",
+  ],
   authors: [{ name: "Arthur Leal" }],
   creator: "Arthur Leal",
   openGraph: {
@@ -38,7 +47,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Arthur Leal | Desenvolvedor Web",
-    description: "Desenvolvedor focado em criar produtos digitais com React, Next.js e IA.",
+    description:
+      "Desenvolvedor focado em criar produtos digitais com React, Next.js e IA.",
     images: ["/logo.png"],
   },
   robots: {
@@ -65,6 +75,7 @@ export default function RootLayout({
     >
       <body>
         <Analytics />
+        <SpeedInsights />
         <ThemeProvider defaultTheme="system" enableSystem>
           <LenisProvider>
             <TooltipProvider>{children}</TooltipProvider>
