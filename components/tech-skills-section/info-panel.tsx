@@ -33,7 +33,7 @@ export function InfoPanel({ skill }: { skill: TechSkill | null }) {
             <h3 className="font-sans text-4xl font-semibold tracking-tight text-balance">
               {skill.name}
             </h3>
-            <p className="mt-5 text-base leading-relaxed text-pretty text-foreground/80">
+            <p className="mt-5 text-base leading-relaxed text-pretty text-muted-foreground">
               {skill.description}
             </p>
             <dl className="mt-6 grid grid-cols-1 gap-x-6 gap-y-1 border-t border-border pt-5 font-mono text-xs">

@@ -59,7 +59,7 @@ export function IdentityCard() {
 
         <Cell
           label="Status"
-          icon={<Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5" />}
+          icon={<Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary" />}
         >
           <p className="font-sans text-lg leading-tight font-medium text-foreground sm:text-xl">
             Construindo
@@ -71,7 +71,7 @@ export function IdentityCard() {
 
         <Cell
           label="Foco atual"
-          icon={<Terminal className="h-3 w-3 sm:h-3.5 sm:w-3.5" />}
+          icon={<Terminal className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary" />}
         >
           <p className="font-sans text-lg leading-tight font-medium text-foreground sm:text-xl">
             Front-end
@@ -83,7 +83,7 @@ export function IdentityCard() {
 
         <Cell
           label="Onde"
-          icon={<MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5" />}
+          icon={<MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary" />}
         >
           <p className="font-sans text-lg leading-tight font-medium text-foreground sm:text-xl">
             Bahia

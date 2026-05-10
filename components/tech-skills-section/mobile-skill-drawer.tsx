@@ -99,7 +99,7 @@ export function MobileSkillDrawer({
                 {skill.name}
               </h3>
 
-              <p className="mt-5 text-base leading-relaxed text-pretty text-foreground/80">
+              <p className="mt-5 text-base leading-relaxed text-pretty text-muted-foreground">
                 {skill.description}
               </p>
 
