@@ -30,7 +30,7 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>
+        <ThemeProvider defaultTheme="system" enableSystem>
           <LenisProvider>
             <TooltipProvider>{children}</TooltipProvider>
           </LenisProvider>
