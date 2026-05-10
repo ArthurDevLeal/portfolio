@@ -43,7 +43,7 @@ export function IntroBlock() {
           <figure className="relative h-full w-full rotate-[-1.5deg] rounded-sm border border-border bg-card p-3 shadow-lg">
             <div className="relative h-[82%] w-full overflow-hidden bg-muted">
               <Image
-                src="/portrait.jpg"
+                src="/me.png"
                 alt="Retrato em preto e branco de Arthur Leal"
                 fill
                 sizes="(min-width: 1024px) 320px, 60vw"

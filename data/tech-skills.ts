@@ -82,7 +82,7 @@ export const techSkills: TechSkill[] = [
   },
   {
     id: "html-css",
-    name: "HTML5/CSS3",
+    name: "HTML/CSS",
     category: "frontend",
     short: "Estrutura e estilo base",
     description:

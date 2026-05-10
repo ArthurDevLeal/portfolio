@@ -2,46 +2,114 @@
   "entries": [
     {
       "year": "2022",
-      "title": "O início de tudo",
-      "subtitle": "Primeiros passos",
-      "description": "Comecei do zero, sem saber o que era um terminal. Mergulhei em tutoriais, fiz meus primeiros sites estáticos e descobri que resolver problemas com código era exatamente o que eu queria fazer pelos próximos anos.",
-      "skills": ["HTML", "CSS", "JavaScript", "Git"],
-      "image": "/journey/code-2022.jpg",
-      "imageAlt": "Caderno aberto com anotações de código sobre uma mesa de madeira"
+      "title": "O primeiro contato",
+      "subtitle": "Python nas férias",
+      "description": "Comecei o ano estudando Python por incentivo da minha irmã. Passei as férias focado na lógica de programação com o curso do Gustavo Guanabara e aprendi a base de funções e variáveis. Foi um período importante para entender o raciocínio lógico, mas senti que precisava de algo mais visual para explorar meu lado criativo.",
+      "skills": ["Python", "Lógica de programação"]
+    },
+    {
+      "year": "2022.4",
+      "title": "A identificação com a Web",
+      "subtitle": "HTML e CSS",
+      "description": "Ao conhecer o HTML e o CSS, percebi que era exatamente o que eu buscava. Dediquei quase um ano aos estudos teóricos e projetos práticos. Eu me desafiava a criar interfaces complexas apenas com CSS, buscando replicar layouts modernos do zero para dominar as técnicas de estilização e responsividade.",
+      "skills": ["HTML", "CSS", "UI Challenges", "Responsividade"]
     },
     {
       "year": "2023",
-      "title": "Universidade",
-      "subtitle": "Ciência da Computação",
-      "description": "Ingressei na faculdade e a porta da teoria se abriu. Estruturas de dados, algoritmos, redes — peças que ainda estavam soltas começaram a se encaixar. Fora da sala de aula, comecei a participar de hackathons e grupos de estudo.",
-      "skills": ["Python", "C", "Algoritmos", "Linux"],
-      "image": "/journey/campus-2023.jpg",
-      "imageAlt": "Corredor minimalista de uma universidade com luz natural"
+      "title": "JavaScript e interatividade",
+      "subtitle": "Lógica aplicada ao navegador",
+      "description": "Com uma base sólida em estrutura e estilo, iniciei o aprendizado de JavaScript através da B7Web. Foram seis meses focados em entender como manipular o DOM e tornar as páginas dinâmicas. Foi o momento em que compreendi o verdadeiro potencial de desenvolvimento de aplicações interativas.",
+      "skills": ["JavaScript", "DOM", "ES6+", "Lógica avançada"]
+    },
+    {
+      "year": "2023.6",
+      "title": "Ecossistema moderno",
+      "subtitle": "Tailwind e os primeiros passos no React",
+      "description": "Avancei para o Tailwind CSS para otimizar o fluxo de estilização e logo em seguida para o TypeScript. Após um período de adaptação com a tipagem estática, comecei a trabalhar com React e Next.js. A arquitetura baseada em componentes mudou completamente minha forma de organizar projetos.",
+      "skills": ["Tailwind CSS", "TypeScript", "React", "Next.js"]
     },
     {
       "year": "2024",
-      "title": "Primeiro estágio",
-      "subtitle": "Frontend Developer",
-      "description": "Entrei em uma startup como estagiário de frontend. Aprendi a trabalhar em equipe, code review, deploy em produção e a importância de escrever código que outras pessoas precisam ler. Foi onde descobri o React e nunca mais soltei.",
-      "skills": ["React", "TypeScript", "Tailwind", "Figma"],
-      "image": "/journey/work-2024.jpg",
-      "imageAlt": "Mesa de trabalho minimalista com dois monitores"
+      "title": "Spacelaxy",
+      "subtitle": "Liderança e design na prática",
+      "description": "Ingressei na Spacelaxy, uma microempresa americana, como desenvolvedor voluntário. Mesmo sem experiência prévia com Git ou fluxos de trabalho em equipe, assumi a gestão da equipe de front-end e a criação do Design System da plataforma no Figma. Aprendi na prática sobre controle de versões com branches, arquitetura de componentes (Compound components) e consumo de APIs.",
+      "skills": [
+        "React",
+        "Next.js",
+        "Git avançado",
+        "Figma",
+        "Design Systems",
+        "Gestão de equipe"
+      ],
+      "image": "/space.png",
+      "imageAlt": "Mesa de trabalho com dois monitores, um com o Figma aberto e outro com código"
     },
     {
       "year": "2025",
-      "title": "Full-stack & autonomia",
-      "subtitle": "Desenvolvedor full-stack",
-      "description": "Subi um nível. Comecei a construir produtos do zero, do banco de dados à interface. Liderança técnica em projetos pequenos, mentoria para juniores e contribuições open-source viraram parte da rotina.",
-      "skills": ["Next.js", "Node.js", "PostgreSQL", "AWS"],
-      "image": null,
-      "imageAlt": null
+      "title": "Transição para o Full-stack",
+      "subtitle": "Autonomia no desenvolvimento",
+      "description": "Para ter mais autonomia e não depender de terceiros no backend, estudei Node.js, Express e Prisma durante quatro meses. A escolha do Prisma facilitou a integração com o banco de dados, permitindo que eu desenvolvesse aplicações completas com autenticação JWT e validação de dados com Zod.",
+      "skills": ["Node.js", "Express", "Prisma", "JWT", "Zod", "PostgreSQL"]
+    },
+    {
+      "year": "2025.5",
+      "title": "Projetos Reais",
+      "subtitle": "Freelances e impacto direto",
+      "description": "Como desenvolvedor full-stack, entreguei projetos para barbearia, restaurante e um e-commerce integrado ao WhatsApp. Desenvolvi dashboards administrativos para cada um deles, permitindo o gerenciamento de produtos e pedidos através de sistemas de CRUD completos.",
+      "skills": ["Next.js", "Prisma", "Dashboard", "E-commerce", "CRUD"],
+      "image": "/dbs.png",
+      "imageAlt": "Dashboard administrativo com tabelas, gráficos e menu lateral"
+    },
+    {
+      "year": "2025.6",
+      "title": "Inovação com IA",
+      "subtitle": "Sistema de estudos inteligente",
+      "description": "Construí do zero um sistema de estudos com IA integrada em cada camada: geração automática de questões, criação de flashcards inteligentes, chatbot totalmente integrado ao contexto do usuário e cálculo personalizado de sessões de estudo para cada pessoa. Tinha autenticação JWT, integração com modelos de linguagem e uma arquitetura pensada para escalar. Foi o projeto que mais me ensinou sobre produto, não só sobre código.",
+      "skills": [
+        "IA integrada",
+        "Auth JWT",
+        "Chatbot",
+        "Geração de conteúdo",
+        "Full-stack"
+      ],
+      "image": "/estudoplat.png",
+      "imageAlt": "Interface de um sistema de estudos com cards de flashcard e chat aberto"
+    },
+    {
+      "year": "2025.9",
+      "title": "Foco em Experiência do Usuário",
+      "subtitle": "Redesign e Design de Produto",
+      "description": "Trabalhei no redesign de uma plataforma de estudos, focando na melhoria da hierarquia visual e simplificação do fluxo do usuário. O trabalho foi realizado no Figma, partindo de um diagnóstico de UX até a entrega de todos os componentes da interface.",
+      "skills": [
+        "Figma",
+        "UX",
+        "Design de produto",
+        "Redesign",
+        "Design System"
+      ],
+      "image": "/estudos.png",
+      "imageAlt": "Telas de uma plataforma de estudos redesenhada, com layout limpo e tipografia moderna"
     },
     {
       "year": "2026",
-      "title": "Hoje",
-      "subtitle": "Construindo o que vem depois",
-      "description": "Foco em arquiteturas mais robustas, design systems e performance. Estudando IA aplicada a produto e refinando o jeito de pensar produto, não só código. A jornada continua — e o próximo capítulo já está sendo escrito.",
-      "skills": ["AI", "Arquitetura", "Design Systems", "DX"],
+      "title": "Formação Acadêmica",
+      "subtitle": "Ciência da Computação na UESB",
+      "description": "Iniciei o curso de Ciência da Computação na UESB para consolidar os fundamentos teóricos. A graduação tem sido essencial para dar estrutura acadêmica ao conhecimento prático que adquiri, aprofundando o estudo em algoritmos e arquitetura de computadores.",
+      "skills": [
+        "Algoritmos",
+        "Estruturas de dados",
+        "Redes",
+        "Fundamentos de CS"
+      ],
+      "image": "/uesb.jpg",
+      "imageAlt": "Corredor minimalista de uma universidade com luz natural"
+    },
+    {
+      "year": "Hoje",
+      "title": "Cenário Atual",
+      "subtitle": "Performance e novas tecnologias",
+      "description": "Atualmente dedico meu tempo ao estudo de animações avançadas e à integração de IA em novos fluxos de trabalho. O objetivo agora é encontrar um estágio ou vaga júnior para contribuir em projetos de larga escala e continuar evoluindo como desenvolvedor.",
+      "skills": ["Animações", "IA aplicada", "Novas libs"],
       "image": null,
       "imageAlt": null
     }

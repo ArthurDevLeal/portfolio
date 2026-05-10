@@ -71,17 +71,16 @@ export function TimelineItem({ entry, index }: Props) {
       </ul>
 
       {entry.image && (
-        <div className="relative mt-6 aspect-4/3 w-full max-w-xs overflow-hidden rounded-md border border-border bg-muted sm:mt-10 sm:max-w-md">
+        <div className="relative mt-6 aspect-4/2 w-full max-w-xs overflow-hidden rounded-md border border-border bg-muted sm:mt-10 sm:max-w-xl">
           <Image
             src={entry.image || "/placeholder.svg"}
             alt={entry.imageAlt ?? ""}
             fill
             sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 100vw"
             className={cn(
-              "object-cover grayscale transition-all duration-1000 ease-out",
+              "object-cover grayscale hover:grayscale-0 transition-[scale_opacity] duration-1000 ease-out",
               visible ? "scale-100 opacity-100" : "scale-105 opacity-0"
             )}
-            style={{ transitionDelay: visible ? "300ms" : "0ms" }}
           />
         </div>
       )}
