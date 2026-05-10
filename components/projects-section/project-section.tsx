@@ -140,7 +140,7 @@ export function ProjectSection({ project, eyebrow }: ProjectSectionProps) {
               {skillsGroup.map((group) => (
                 <div
                   key={group.category}
-                  className="relative w-fit gap-2 rounded-md border px-2 py-2"
+                  className="flex relative w-fit gap-2 rounded-md border px-2 py-2"
                 >
                   <p className="absolute -top-2 -left-1 bg-background px-1 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
                     {group.category}
