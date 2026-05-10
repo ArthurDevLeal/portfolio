@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
+
 
 const interHeading = Inter({ subsets: ["latin"], variable: "--font-heading" })
 
@@ -30,6 +32,7 @@ export default function RootLayout({
       )}
     >
       <body>
+        <Analytics/>
         <ThemeProvider defaultTheme="system" enableSystem>
           <LenisProvider>
             <TooltipProvider>{children}</TooltipProvider>
